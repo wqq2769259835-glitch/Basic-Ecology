@@ -3,1402 +3,1328 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>基础生态学 · 期末复习资料</title>
+<title>基础生态学 · 期末复习资料（完整版）</title>
 <style>
-  :root {
-    --green-deep: #1a4731;
-    --green-mid: #2d6a4f;
-    --green-light: #52b788;
-    --green-pale: #d8f3dc;
-    --green-mist: #f0faf3;
-    --amber: #e9c46a;
-    --amber-dark: #b5830a;
-    --rust: #c45c26;
-    --soil: #5c4033;
-    --text: #1c2b22;
-    --text-soft: #3d5240;
-    --border: #a8d5b5;
-    --bg: #f7fdf9;
-    --card-bg: #ffffff;
-    --shadow: 0 2px 12px rgba(26,71,49,0.09);
-  }
+:root{
+  --g0:#0d2b1c;--g1:#1a4731;--g2:#2d6a4f;--g3:#52b788;--g4:#95d5b2;--g5:#d8f3dc;--g6:#f0faf3;
+  --amber:#e9c46a;--amber-d:#9a6f00;--rust:#c45c26;--sky:#2980b9;--sky-l:#ebf5fb;
+  --text:#1c2b22;--text2:#3d5240;--border:#a8d5b5;--bg:#f5fdf7;--card:#fff;
+  --shadow:0 2px 14px rgba(26,71,49,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'PingFang SC','Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;font-size:15px}
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+/* ── HEADER ── */
+header{background:linear-gradient(140deg,#0d2b1c 0%,#1e5438 55%,#2d7a5e 100%);color:#fff;padding:44px 48px 36px;position:relative;overflow:hidden}
+header::before{content:'';position:absolute;top:-80px;right:-80px;width:320px;height:320px;background:rgba(255,255,255,.035);border-radius:50%}
+header h1{font-size:2rem;font-weight:700;letter-spacing:.04em;margin-bottom:6px}
+header .sub{color:rgba(255,255,255,.72);font-size:.92em;margin-bottom:18px}
+.meta-tags{display:flex;gap:10px;flex-wrap:wrap}
+.meta-tags span{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:3px 14px;font-size:.82em;color:rgba(255,255,255,.9)}
+.meta-tags span.hot{background:rgba(233,196,106,.22);border-color:rgba(233,196,106,.4);color:#f9e4a0}
 
-  body {
-    font-family: 'PingFang SC', 'Noto Serif SC', 'Source Han Serif SC', Georgia, serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.8;
-    font-size: 15px;
-  }
+/* ── EXAM BOX ── */
+.exam-box{background:#fffef4;border:1px solid #e9d96a;border-radius:12px;padding:20px 28px;margin:24px 48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.exam-type{background:#fff;border:1px solid #e8e0a8;border-radius:8px;padding:14px 16px}
+.exam-type .score{font-size:1.4em;font-weight:700;color:var(--g1);line-height:1}
+.exam-type .label{font-size:.8em;color:var(--text2);margin-top:2px}
+.exam-type .desc{font-size:.84em;color:#5a4800;margin-top:8px;line-height:1.55}
+.exam-type.hot{border-color:#f0b060;background:#fff8f0}
+.exam-type.hot .score{color:#c45c26}
 
-  /* ── Header ── */
-  header {
-    background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 60%, #3a8a5f 100%);
-    color: #fff;
-    padding: 48px 40px 36px;
-    position: relative;
-    overflow: hidden;
-  }
-  header::before {
-    content: '';
-    position: absolute;
-    top: -60px; right: -60px;
-    width: 280px; height: 280px;
-    background: rgba(255,255,255,0.04);
-    border-radius: 50%;
-  }
-  header::after {
-    content: '';
-    position: absolute;
-    bottom: -40px; left: 40%;
-    width: 180px; height: 180px;
-    background: rgba(255,255,255,0.03);
-    border-radius: 50%;
-  }
-  header h1 {
-    font-size: 2.2em;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    margin-bottom: 8px;
-  }
-  header .subtitle {
-    color: rgba(255,255,255,0.78);
-    font-size: 0.95em;
-    font-style: italic;
-    letter-spacing: 0.04em;
-  }
-  header .meta {
-    margin-top: 20px;
-    display: flex; gap: 24px; flex-wrap: wrap;
-  }
-  header .meta span {
-    background: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 20px;
-    padding: 4px 16px;
-    font-size: 0.85em;
-    color: rgba(255,255,255,0.9);
-  }
+/* ── TOC ── */
+nav.toc{margin:0 48px 8px;background:var(--g6);border-left:4px solid var(--g3);border-radius:0 10px 10px 0;padding:18px 28px}
+nav.toc h2{font-size:.88em;color:var(--g1);font-weight:700;letter-spacing:.06em;margin-bottom:10px;text-transform:uppercase}
+nav.toc ol{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2px 24px;padding-left:18px}
+nav.toc li{margin:3px 0}
+nav.toc a{color:var(--g2);text-decoration:none;font-size:.88em}
+nav.toc a:hover{color:var(--g0);text-decoration:underline}
 
-  /* ── TOC ── */
-  nav.toc {
-    background: var(--green-pale);
-    border-left: 4px solid var(--green-light);
-    padding: 24px 32px;
-    margin: 28px 40px;
-    border-radius: 0 10px 10px 0;
-  }
-  nav.toc h2 { font-size: 1em; color: var(--green-deep); margin-bottom: 12px; font-weight: 700; letter-spacing: 0.05em; }
-  nav.toc ol { padding-left: 20px; column-count: 2; column-gap: 40px; }
-  nav.toc li { margin: 4px 0; }
-  nav.toc a { color: var(--green-mid); text-decoration: none; font-size: 0.92em; }
-  nav.toc a:hover { color: var(--green-deep); text-decoration: underline; }
+/* ── MAIN ── */
+main{max-width:1060px;margin:0 auto;padding:0 48px 60px}
 
-  /* ── Layout ── */
-  main { max-width: 1000px; margin: 0 auto; padding: 0 40px 60px; }
+/* ── PART HEADER ── */
+.part-hdr{display:flex;align-items:center;gap:14px;margin:40px 0 4px}
+.part-badge{background:var(--g1);color:#fff;font-size:.72em;font-weight:700;padding:4px 14px;border-radius:12px;letter-spacing:.07em;white-space:nowrap}
+.part-hdr h2{font-size:1.4em;color:var(--g1);border-bottom:2px solid var(--g3);padding-bottom:5px;flex:1}
 
-  /* ── Chapters ── */
-  .part-header {
-    margin: 44px 0 8px;
-    display: flex; align-items: center; gap: 14px;
-  }
-  .part-header .part-badge {
-    background: var(--green-deep);
-    color: #fff;
-    font-size: 0.72em;
-    font-weight: 700;
-    padding: 3px 12px;
-    border-radius: 12px;
-    letter-spacing: 0.08em;
-    white-space: nowrap;
-  }
-  .part-header h2 {
-    font-size: 1.45em;
-    color: var(--green-deep);
-    border-bottom: 2px solid var(--green-light);
-    padding-bottom: 6px;
-    flex: 1;
-  }
+/* ── CHAPTER ── */
+.chapter{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:26px 30px;margin:16px 0;box-shadow:var(--shadow)}
+.chapter>h3{font-size:1.08em;color:var(--g2);margin-bottom:18px;padding-bottom:9px;border-bottom:1px dashed var(--border);display:flex;align-items:center;gap:8px}
+.chapter>h3::before{content:'🌿';font-size:.9em}
 
-  .chapter {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 28px 32px;
-    margin: 18px 0;
-    box-shadow: var(--shadow);
-  }
-  .chapter h3 {
-    font-size: 1.15em;
-    color: var(--green-mid);
-    margin-bottom: 18px;
-    padding-bottom: 10px;
-    border-bottom: 1px dashed var(--border);
-    display: flex; align-items: center; gap: 8px;
-  }
-  .chapter h3::before {
-    content: '🌿';
-    font-size: 0.9em;
-  }
+/* ── SECTION ── */
+.sec{margin-bottom:20px}
+.sec h4{font-size:.95em;color:var(--g0);background:var(--g6);border-left:3px solid var(--g3);padding:6px 12px;margin-bottom:10px;border-radius:0 6px 6px 0;font-weight:600}
 
-  /* ── Sections ── */
-  .section { margin-bottom: 22px; }
-  .section h4 {
-    font-size: 1em;
-    color: var(--soil);
-    background: var(--green-mist);
-    border-left: 3px solid var(--green-light);
-    padding: 6px 14px;
-    margin-bottom: 10px;
-    border-radius: 0 6px 6px 0;
-    font-weight: 600;
-  }
+/* ── TERM GRID ── */
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:10px 0}
+.tcard{background:var(--g6);border:1px solid var(--border);border-radius:8px;padding:13px 15px}
+.tcard .tn{font-weight:700;color:var(--g1);font-size:.93em;margin-bottom:5px;display:flex;align-items:center;gap:6px}
+.tcard .tn::before{content:'◆';color:var(--g3);font-size:.7em}
+.tcard .td{font-size:.87em;color:var(--text2);line-height:1.62}
+.tcard.hot{border-color:#f0b060;background:#fff8f0}
+.tcard.hot .tn{color:#8a3d00}
 
-  /* ── Cards ── */
-  .term-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; margin: 12px 0; }
-  .term-card {
-    background: var(--green-mist);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 14px 16px;
-  }
-  .term-card .term-name {
-    font-weight: 700;
-    color: var(--green-deep);
-    font-size: 0.95em;
-    margin-bottom: 6px;
-    display: flex; align-items: center; gap: 6px;
-  }
-  .term-card .term-name::before { content: '◆'; color: var(--green-light); font-size: 0.7em; }
-  .term-card .term-def { font-size: 0.88em; color: var(--text-soft); line-height: 1.65; }
+/* ── TABLE ── */
+table.ct{width:100%;border-collapse:collapse;margin:10px 0;font-size:.87em}
+table.ct th{background:var(--g2);color:#fff;padding:8px 11px;text-align:left;font-weight:600}
+table.ct td{padding:7px 11px;border-bottom:1px solid var(--border);vertical-align:top}
+table.ct tr:nth-child(even) td{background:var(--g6)}
+table.ct tr:hover td{background:var(--g5)}
 
-  /* ── Comparison Tables ── */
-  .compare-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.88em; }
-  .compare-table th {
-    background: var(--green-mid);
-    color: #fff;
-    padding: 9px 12px;
-    text-align: left;
-    font-weight: 600;
-  }
-  .compare-table td { padding: 8px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
-  .compare-table tr:nth-child(even) td { background: var(--green-mist); }
-  .compare-table tr:hover td { background: var(--green-pale); }
+/* ── KEY BOX ── */
+.kbox{background:linear-gradient(135deg,#fffef0,#fffbe0);border:1px solid var(--amber);border-radius:8px;padding:13px 17px;margin:10px 0}
+.kbox .kt{color:var(--amber-d);font-weight:700;font-size:.88em;margin-bottom:7px;display:flex;align-items:center;gap:6px}
+.kbox ul,.kbox ol{padding-left:18px}
+.kbox li{margin:4px 0;font-size:.88em;color:#3a2800;line-height:1.6}
 
-  /* ── Key Points ── */
-  .key-box {
-    background: linear-gradient(135deg, #fffbea 0%, #fff8dc 100%);
-    border: 1px solid var(--amber);
-    border-radius: 8px;
-    padding: 14px 18px;
-    margin: 12px 0;
-  }
-  .key-box .key-title {
-    color: var(--amber-dark);
-    font-weight: 700;
-    font-size: 0.9em;
-    margin-bottom: 8px;
-    display: flex; align-items: center; gap: 6px;
-  }
-  .key-box ul, .key-box ol { padding-left: 18px; }
-  .key-box li { margin: 4px 0; font-size: 0.9em; color: #4a3800; line-height: 1.6; }
+/* ── FORMULA ── */
+.formula{background:#f0f4ff;border:1px solid #b0bdf0;border-radius:7px;padding:10px 16px;margin:9px 0;font-family:'Courier New',monospace;font-size:.89em;color:#1a237e}
 
-  /* ── Formula Box ── */
-  .formula-box {
-    background: #f0f4ff;
-    border: 1px solid #b0bdf0;
-    border-radius: 8px;
-    padding: 12px 18px;
-    margin: 10px 0;
-    font-family: 'Courier New', monospace;
-    font-size: 0.9em;
-    color: #1a237e;
-  }
+/* ── LISTS ── */
+ul.cl,ol.cl{padding-left:20px;margin:7px 0}
+ul.cl li,ol.cl li{margin:4px 0;font-size:.89em;line-height:1.68;color:var(--text2)}
+ul.cl li strong,ol.cl li strong{color:var(--text)}
 
-  /* ── Inline tags ── */
-  .tag {
-    display: inline-block;
-    background: var(--green-pale);
-    color: var(--green-deep);
-    border-radius: 4px;
-    padding: 1px 8px;
-    font-size: 0.82em;
-    font-weight: 600;
-    margin: 1px 2px;
-    border: 1px solid var(--border);
-  }
-  .tag.exam { background: #fff0e0; border-color: #f0b060; color: #7a4500; }
+/* ── MIND MAP SVG wrapper ── */
+.mindmap-wrap{background:var(--g6);border:1px solid var(--border);border-radius:10px;padding:12px 8px;margin:14px 0;overflow-x:auto}
+.mindmap-wrap svg{display:block;max-width:100%;height:auto}
 
-  /* ── Numbered List ── */
-  ol.content-list, ul.content-list {
-    padding-left: 20px;
-    margin: 8px 0;
-  }
-  ol.content-list li, ul.content-list li {
-    margin: 5px 0;
-    font-size: 0.91em;
-    line-height: 1.7;
-    color: var(--text-soft);
-  }
-  ol.content-list li strong, ul.content-list li strong { color: var(--text); }
+/* ── BACK TOP ── */
+.bt{text-align:right;margin:8px 0 0}
+.bt a{color:var(--g3);font-size:.82em;text-decoration:none}
 
-  /* ── Alert ── */
-  .alert {
-    background: #fff5f5;
-    border-left: 4px solid #e53e3e;
-    padding: 10px 16px;
-    margin: 10px 0;
-    border-radius: 0 6px 6px 0;
-    font-size: 0.9em;
-    color: #742a2a;
-  }
-
-  /* ── Back to top ── */
-  .back-top { text-align: right; margin: 10px 0 0; }
-  .back-top a { color: var(--green-light); font-size: 0.82em; text-decoration: none; }
-  .back-top a:hover { color: var(--green-mid); }
-
-  /* ── Footer ── */
-  footer {
-    text-align: center;
-    color: #7a9e84;
-    font-size: 0.82em;
-    padding: 28px 40px 40px;
-    border-top: 1px solid var(--border);
-  }
-
-  @media (max-width: 680px) {
-    header, main { padding-left: 18px; padding-right: 18px; }
-    nav.toc { margin: 18px; }
-    nav.toc ol { column-count: 1; }
-    .term-grid { grid-template-columns: 1fr; }
-    .chapter { padding: 18px 16px; }
-  }
+/* ── EXAM SECTION ── */
+.exam-section{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:26px 30px;margin:16px 0;box-shadow:var(--shadow)}
+.exam-section h3{font-size:1.08em;color:var(--g2);margin-bottom:16px;padding-bottom:8px;border-bottom:1px dashed var(--border);display:flex;align-items:center;gap:8px}
+.nlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;margin:10px 0}
+.nitem{background:var(--g6);border:1px solid var(--border);border-radius:6px;padding:8px 12px;font-size:.86em;display:flex;align-items:center;gap:7px}
+.nitem .num{background:var(--g2);color:#fff;border-radius:50%;width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;font-size:.75em;font-weight:700;flex-shrink:0}
+.nitem.hot{border-color:#f0b060;background:#fff8f0}
+.nitem.hot .num{background:#c45c26}
+.qlist{list-style:none;padding:0}
+.qlist li{padding:9px 14px;border-left:3px solid var(--g3);background:var(--g6);margin:7px 0;border-radius:0 6px 6px 0;font-size:.88em;color:var(--text2);line-height:1.6}
+.qlist li.hard{border-left-color:#c45c26;background:#fff8f0;color:#4a1500}
+footer{text-align:center;color:#7a9e84;font-size:.82em;padding:28px 48px 40px;border-top:1px solid var(--border)}
 </style>
 </head>
 <body>
 
 <header id="top">
   <h1>基础生态学 · 期末复习资料</h1>
-  <p class="subtitle">Basic Ecology — 归纳自全课程 20 份讲义</p>
-  <div class="meta">
-    <span>📋 名词解释 · 简答题 · 论述题</span>
-    <span>📚 共 14 章核心内容</span>
-    <span>🌱 中山大学 孙伟老师</span>
+  <p class="sub">Basic Ecology — 根据老师课堂划重点全面整理 · 含各章知识框图</p>
+  <div class="meta-tags">
+    <span>📝 单选 30分</span>
+    <span>📖 名词解释 30分</span>
+    <span>💬 问答题 20分</span>
+    <span class="hot">🖊 画图解释题 20分 ← 原创题型！</span>
+    <span>🌱 共14章 · 中山大学 孙伟老师</span>
   </div>
 </header>
 
+<!-- EXAM TYPES -->
+<div class="exam-box">
+  <div class="exam-type">
+    <div class="score">30分</div>
+    <div class="label">单选题 · 共30题</div>
+    <div class="desc">类似雨课堂平时练习题，考查基础概念和定律</div>
+  </div>
+  <div class="exam-type">
+    <div class="score">30分</div>
+    <div class="label">名词解释 · 共10题</div>
+    <div class="desc">重点名词的准确定义，每题3分</div>
+  </div>
+  <div class="exam-type">
+    <div class="score">20分</div>
+    <div class="label">问答题 · 共4题</div>
+    <div class="desc">重要问题的简要回答，每题5分</div>
+  </div>
+  <div class="exam-type hot">
+    <div class="score">20分</div>
+    <div class="label">画图解释题 · 共2题 ⭐</div>
+    <div class="desc">用<strong>框图</strong>画出知识点之间逻辑关联，配必要文字说明。老师原创题型，本资料每章均含框图练习！</div>
+  </div>
+</div>
+
+<!-- TOC -->
 <nav class="toc">
-  <h2>目 录</h2>
+  <h2>📑 目 录</h2>
   <ol>
-    <li><a href="#part1">第一部分：有机体与环境（Ch1–3）</a></li>
-    <li><a href="#ch1">第一章：生物与环境</a></li>
+    <li><a href="#p1">第一部分：有机体与环境（Ch 1–3）</a></li>
+    <li><a href="#ch1">第一章：生物与环境（通用规律）</a></li>
     <li><a href="#ch2a">第二章：生物与光的关系</a></li>
     <li><a href="#ch2b">第二章：生物与温度的关系</a></li>
     <li><a href="#ch3a">第三章：生物与水的关系</a></li>
-    <li><a href="#ch3b">第三章：生物与大气和土壤的关系</a></li>
-    <li><a href="#part2">第二部分：种群生态学（Ch4–7）</a></li>
-    <li><a href="#ch4">第四章：种群及其基本特征</a></li>
-    <li><a href="#ch5">第五章：生物种及其变异与进化</a></li>
+    <li><a href="#ch3b">第三章：大气与土壤</a></li>
+    <li><a href="#p2">第二部分：种群生态学（Ch 4–7）</a></li>
+    <li><a href="#ch4">第四章：种群基本特征</a></li>
+    <li><a href="#ch5">第五章：变异与进化</a></li>
     <li><a href="#ch6">第六章：生活史对策</a></li>
     <li><a href="#ch7">第七章：种内与种间关系</a></li>
-    <li><a href="#part3">第三部分：群落生态学（Ch8–10）</a></li>
-    <li><a href="#ch8">第八章：群落的组成与结构</a></li>
-    <li><a href="#ch9">第九章：群落的动态</a></li>
-    <li><a href="#ch10">第十章：群落的分类与排序</a></li>
-    <li><a href="#part4">第四部分：生态系统生态学（Ch11–14）</a></li>
-    <li><a href="#ch11">第十一章：生态系统的一般特征</a></li>
-    <li><a href="#ch12">第十二章：生态系统中的能量流动</a></li>
-    <li><a href="#ch13">第十三章：生态系统的物质循环</a></li>
-    <li><a href="#ch14">第十四章：地球上生态系统的主要类型及其分布</a></li>
+    <li><a href="#p3">第三部分：群落生态学（Ch 8–10）</a></li>
+    <li><a href="#ch8">第八章：群落组成与结构</a></li>
+    <li><a href="#ch9">第九章：群落动态</a></li>
+    <li><a href="#ch10">第十章：分类与排序</a></li>
+    <li><a href="#p4">第四部分：生态系统生态学（Ch 11–14）</a></li>
+    <li><a href="#ch11">第十一章：生态系统特征</a></li>
+    <li><a href="#ch12">第十二章：能量流动</a></li>
+    <li><a href="#ch13">第十三章：物质循环</a></li>
+    <li><a href="#ch14">第十四章：全球分布规律</a></li>
+    <li><a href="#exam">备考专区：名词 / 题库 / 框图清单</a></li>
   </ol>
 </nav>
 
 <main>
-
-<!-- ═══════════════════════════════════════════════════ -->
-<!-- PART 1 -->
-<!-- ═══════════════════════════════════════════════════ -->
-<div class="part-header" id="part1">
+<!-- ═══════════════ PART 1 ═══════════════ -->
+<div class="part-hdr" id="p1">
   <span class="part-badge">第一部分</span>
   <h2>有机体与环境（Ch 1–3）</h2>
 </div>
 
+<!-- 第一部分总框图 -->
+<div class="mindmap-wrap">
+<svg viewBox="0 0 960 260" xmlns="http://www.w3.org/2000/svg" style="font-family:'PingFang SC',Arial,sans-serif">
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#52b788" stroke-width="1.5" stroke-linecap="round"/></marker></defs>
+<!-- 中心 -->
+<rect x="380" y="108" width="200" height="44" rx="8" fill="#1a4731" stroke="#1a4731"/>
+<text x="480" y="135" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">有机体与环境</text>
+<!-- 左：生态因子作用 -->
+<rect x="60" y="40" width="150" height="38" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="135" y="64" text-anchor="middle" fill="#fff" font-size="12">生态因子对生物作用</text>
+<line x1="210" y1="59" x2="380" y2="125" stroke="#52b788" stroke-width="1" marker-end="url(#a)" fill="none"/>
+<!-- 左下：生物对因子适应 -->
+<rect x="60" y="100" width="150" height="38" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="135" y="124" text-anchor="middle" fill="#fff" font-size="12">生物对因子适应</text>
+<line x1="210" y1="119" x2="380" y2="130" stroke="#52b788" stroke-width="1" marker-end="url(#a)" fill="none"/>
+<!-- 左更下：3大定律 -->
+<rect x="60" y="160" width="150" height="38" rx="6" fill="#52b788" stroke="#95d5b2" stroke-width="0.5"/>
+<text x="135" y="184" text-anchor="middle" fill="#0d2b1c" font-size="12">Liebig/Shelford 3大定律</text>
+<line x1="210" y1="179" x2="380" y2="138" stroke="#52b788" stroke-width="1" marker-end="url(#a)" fill="none"/>
+<!-- 右上：光 -->
+<rect x="750" y="30" width="120" height="36" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="810" y="53" text-anchor="middle" fill="#fff" font-size="12">光（光周期）</text>
+<line x1="750" y1="48" x2="580" y2="120" stroke="#95d5b2" stroke-width="1" marker-end="url(#a)" fill="none"/>
+<!-- 右中上：温度 -->
+<rect x="750" y="82" width="120" height="36" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="810" y="105" text-anchor="middle" fill="#fff" font-size="12">温度（积温法则）</text>
+<line x1="750" y1="100" x2="580" y2="128" stroke="#95d5b2" stroke-width="1" marker-end="url(#a)" fill="none"/>
+<!-- 右中下：水 -->
+<rect x="750" y="134" width="120" height="36" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="810" y="157" text-anchor="middle" fill="#fff" font-size="12">水（渗透压调节）</text>
+<line x1="750" y1="152" x2="580" y2="136" stroke="#95d5b2" stroke-width="1" marker-end="url(#a)" fill="none"/>
+<!-- 右下：土壤大气 -->
+<rect x="750" y="186" width="120" height="36" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="810" y="209" text-anchor="middle" fill="#fff" font-size="12">土壤 / 大气</text>
+<line x1="750" y1="204" x2="580" y2="142" stroke="#95d5b2" stroke-width="1" marker-end="url(#a)" fill="none"/>
+<!-- 标注 -->
+<text x="480" y="230" text-anchor="middle" fill="#3d5240" font-size="11">核心逻辑：生态因子 → 作用规律（3大定律）→ 生物的适应（5种方式）→ 各类因子特殊规律</text>
+</svg>
+</div>
+
 <!-- CH1 -->
 <div class="chapter" id="ch1">
-  <h3>第一章：生物与环境</h3>
+  <h3>第一章：生物与环境（通用规律）</h3>
 
-  <div class="section">
-    <h4>核心名词</h4>
-    <div class="term-grid">
-      <div class="term-card">
-        <div class="term-name">生态学（Ecology）</div>
-        <div class="term-def">研究生物与环境相互关系的科学。核心是"生物与生物的关系"和"生物与环境的关系"。</div>
+  <div class="sec">
+    <h4>三大定量定律（必考名词）</h4>
+    <div class="tgrid">
+      <div class="tcard hot">
+        <div class="tn">利比希最小因子定律</div>
+        <div class="td">植物的生长受处于最低量的必需元素限制。只考虑单因子<strong>下限</strong>，1840年提出。</div>
       </div>
-      <div class="term-card">
-        <div class="term-name">生态因子（Ecological factor）</div>
-        <div class="term-def">环境中对生物生长、发育、生殖、行为和分布有直接或间接影响的环境要素。</div>
+      <div class="tcard hot">
+        <div class="tn">限制因子定律（Blackman）</div>
+        <div class="td">当某生态因子超过耐受<strong>上限</strong>时，同样限制生物。1905年提出，对最小因子定律的补充。</div>
       </div>
-      <div class="term-card">
-        <div class="term-name">利比希最小因子定律（Liebig's Law）</div>
-        <div class="term-def">植物的生长受到处于最低量（或最少）的必需元素的限制（1840年提出）。</div>
+      <div class="tcard hot">
+        <div class="tn">谢尔福德耐受性定律</div>
+        <div class="td">任一生态因子在数量或质量上的不足或过多，当超过某种生物的耐受限度时，都会使该生物衰退或不能生存。1913年，包含上下限和质量。</div>
       </div>
-      <div class="term-card">
-        <div class="term-name">限制因子定律（Blackman's Law）</div>
-        <div class="term-def">当某一生态因子超过生物耐受上限时，该因子同样会成为限制因子（1905年）。</div>
+      <div class="tcard hot">
+        <div class="tn">生态幅（Ecological amplitude）</div>
+        <div class="td">生物对某种生态因子的耐受范围（从最低值到最高值）。在最适值时表现最佳。是上述三定律的核心概念产物。</div>
       </div>
-      <div class="term-card">
-        <div class="term-name">谢尔福德耐受性定律（Shelford's Law of Tolerance）</div>
-        <div class="term-def">任何一种生态因子在数量或质量上的不足或过多，当接近或超过某种生物的耐受限度时，都会使该生物衰退或不能生存（1913年）。</div>
+      <div class="tcard hot">
+        <div class="tn">内稳态（Homeostasis）</div>
+        <div class="td">生物控制体内环境使其保持相对稳定的机制，能减少对外界条件的依赖，大大提高适应能力。</div>
       </div>
-      <div class="term-card">
-        <div class="term-name">生态幅（Ecological amplitude）</div>
-        <div class="term-def">生物对某种生态因子的耐受范围（最低值到最高值之间），在最适值时表现最佳。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">内稳态（Homeostasis）</div>
-        <div class="term-def">生物控制体内环境使其保持相对稳定的机制，能减少生物对外界条件的依赖，大大提高生物对外界的适应能力。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">驯化（Acclimation / Acclimatization）</div>
-        <div class="term-def">若一个种长期生活在最适生存范围的一侧，其耐性限度将逐渐改变，形成新最适点的过程。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">适应组合（Adaptive suits）</div>
-        <div class="term-def">生物对特定环境条件所表现出的一整套协同的适应特性。例如骆驼对沙漠缺水环境的多重适应。</div>
+      <div class="tcard">
+        <div class="tn">适应组合（Adaptive suits）</div>
+        <div class="td">生物对特定环境所表现出的一整套协同适应特性，如骆驼对沙漠缺水的多重适应。</div>
       </div>
     </div>
   </div>
 
-  <div class="section">
+  <div class="sec">
     <h4>生态因子对生物作用的5大规律</h4>
-    <table class="compare-table">
+    <table class="ct">
       <tr><th>规律</th><th>核心含义</th><th>举例</th></tr>
-      <tr><td><strong>综合作用</strong></td><td>生态因子不孤立存在，相互影响、相互制约</td><td>作物生长受水、光、营养物综合作用</td></tr>
-      <tr><td><strong>主导因子作用</strong></td><td>诸多因子中有1–2个起主要作用，其改变引起其它因子变化</td><td>植物春化阶段的低温因子</td></tr>
-      <tr><td><strong>阶段性作用</strong></td><td>不同发育阶段需要不同的生态因子或其不同强度</td><td>水是蝌蚪生存必要条件，成体青蛙依赖性减弱</td></tr>
-      <tr><td><strong>不可替代性和互补性</strong></td><td>一因子不可完全被另一因子替代，但可部分补偿</td><td>CO₂浓度升高可部分补偿光照不足</td></tr>
-      <tr><td><strong>直接和间接作用</strong></td><td>生态因子对生物的影响可直接或间接</td><td>山脉坡向通过影响光照、风温度间接影响树木</td></tr>
+      <tr><td><strong>综合作用</strong></td><td>各生态因子相互影响、相互制约，不孤立存在</td><td>作物生长受水、光、矿质元素综合作用</td></tr>
+      <tr><td><strong>主导因子作用</strong></td><td>诸多因子中有1–2个起主要作用，其改变引起其他因子变化</td><td>植物春化阶段的低温因子</td></tr>
+      <tr><td><strong>阶段性作用</strong></td><td>不同发育阶段需要不同生态因子或其不同强度</td><td>水是蝌蚪必要条件，成体青蛙依赖性减弱</td></tr>
+      <tr><td><strong>不可替代性和互补性</strong></td><td>一因子不可被另一因子完全替代，但可部分补偿</td><td>CO₂浓度升高可部分补偿光照不足</td></tr>
+      <tr><td><strong>直接和间接作用</strong></td><td>生态因子对生物的影响可直接或间接</td><td>山脉坡向通过改变光照间接影响树木</td></tr>
     </table>
   </div>
 
-  <div class="section">
-    <h4>生物对耐受限度的5种调整方式</h4>
-    <table class="compare-table">
-      <tr><th>方式</th><th>含义</th></tr>
-      <tr><td><strong>驯化</strong></td><td>长期生活于一侧→耐性限度改变，形成新最适点</td></tr>
-      <tr><td><strong>休眠</strong></td><td>环境超出适宜范围时进入不活动状态，耐受范围拓宽</td></tr>
-      <tr><td><strong>昼夜/季节节律</strong></td><td>耐受范围随昼夜、季节呈节律性变化（如"春捂秋冻"）</td></tr>
-      <tr><td><strong>内稳态</strong></td><td>控制体内环境稳定，减少对外部条件依赖</td></tr>
-      <tr><td><strong>适应组合</strong></td><td>对特定环境的一整套协同适应特性</td></tr>
+  <div class="sec">
+    <h4>生物适应的5种形式（必考）</h4>
+    <table class="ct">
+      <tr><th>适应方式</th><th>含义</th><th>应用</th></tr>
+      <tr><td><strong>驯化（Acclimation）</strong></td><td>长期生活于最适范围一侧→耐性限度改变，形成新最适点</td><td>品种移植、长途运输</td></tr>
+      <tr><td><strong>休眠（Dormancy）</strong></td><td>环境超出适宜范围时进入不活动状态，耐受范围拓宽</td><td>莲的种子、卤虫卵</td></tr>
+      <tr><td><strong>昼夜和季节节律</strong></td><td>耐受范围随昼夜/季节呈节律性变化</td><td>"春捂秋冻"</td></tr>
+      <tr><td><strong>内稳态</strong></td><td>控制体内环境稳定，减少对外部条件依赖</td><td>常温动物体温调节</td></tr>
+      <tr><td><strong>适应组合</strong></td><td>对特定环境的一整套协同适应特性</td><td>骆驼对沙漠的多重适应</td></tr>
     </table>
   </div>
-  <div class="back-top"><a href="#top">↑ 回到顶部</a></div>
+
+  <!-- 章节框图 -->
+  <div class="sec">
+    <h4>📊 章节框图（画图解释题练习）</h4>
+    <div class="mindmap-wrap">
+<svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg" style="font-family:'PingFang SC',Arial,sans-serif">
+<defs><marker id="a1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#52b788" stroke-width="1.5" stroke-linecap="round"/></marker></defs>
+<!-- 核心 -->
+<rect x="360" y="86" width="180" height="44" rx="8" fill="#1a4731"/>
+<text x="450" y="113" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">生物与生态因子</text>
+<!-- 左：3大定律 -->
+<rect x="30" y="50" width="160" height="38" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="110" y="68" text-anchor="middle" fill="#fff" font-size="11">3大定量定律</text>
+<text x="110" y="82" text-anchor="middle" fill="#95d5b2" font-size="10">Liebig/Blackman/Shelford</text>
+<line x1="190" y1="69" x2="360" y2="100" stroke="#52b788" stroke-width="1" marker-end="url(#a1)" fill="none"/>
+<!-- 左下：生态幅 -->
+<rect x="30" y="120" width="160" height="38" rx="6" fill="#52b788" stroke="#95d5b2" stroke-width="0.5"/>
+<text x="110" y="138" text-anchor="middle" fill="#0d2b1c" font-size="11">生态幅 / 最适生存区</text>
+<text x="110" y="152" text-anchor="middle" fill="#1a4731" font-size="10">（3大定律的核心产物）</text>
+<line x1="190" y1="139" x2="360" y2="115" stroke="#52b788" stroke-width="1" marker-end="url(#a1)" fill="none"/>
+<!-- 右上：5大作用规律 -->
+<rect x="710" y="32" width="160" height="38" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="790" y="50" text-anchor="middle" fill="#fff" font-size="11">5大作用规律</text>
+<text x="790" y="64" text-anchor="middle" fill="#95d5b2" font-size="10">综合·主导·阶段·互补·直间</text>
+<line x1="710" y1="51" x2="540" y2="100" stroke="#95d5b2" stroke-width="1" marker-end="url(#a1)" fill="none"/>
+<!-- 右下：5种适应方式 -->
+<rect x="710" y="86" width="160" height="38" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="790" y="104" text-anchor="middle" fill="#fff" font-size="11">5种适应方式</text>
+<text x="790" y="118" text-anchor="middle" fill="#95d5b2" font-size="10">驯化·休眠·节律·内稳态·适应组合</text>
+<line x1="710" y1="105" x2="540" y2="115" stroke="#95d5b2" stroke-width="1" marker-end="url(#a1)" fill="none"/>
+<!-- 右更下：三维适应 -->
+<rect x="710" y="140" width="160" height="38" rx="6" fill="#52b788" stroke="#95d5b2" stroke-width="0.5"/>
+<text x="790" y="158" text-anchor="middle" fill="#0d2b1c" font-size="11">三维适应</text>
+<text x="790" y="172" text-anchor="middle" fill="#1a4731" font-size="10">形态 / 生理 / 行为</text>
+<line x1="710" y1="159" x2="540" y2="122" stroke="#95d5b2" stroke-width="1" marker-end="url(#a1)" fill="none"/>
+<text x="450" y="200" text-anchor="middle" fill="#3d5240" font-size="11">作用与反作用共存：生物也对环境产生反作用（如"大树底下好乘凉"）</text>
+</svg>
+    </div>
+  </div>
+  <div class="bt"><a href="#top">↑ 顶部</a></div>
 </div>
 
 <!-- CH2a -->
 <div class="chapter" id="ch2a">
   <h3>第二章（第1节）：生物与光的关系</h3>
-
-  <div class="section">
+  <div class="sec">
     <h4>核心名词</h4>
-    <div class="term-grid">
-      <div class="term-card">
-        <div class="term-name">光合有效辐射（PAR）</div>
-        <div class="term-def">植物光合作用能利用的太阳辐射，波长范围 380–710 nm。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">光周期现象（Photoperiodism）</div>
-        <div class="term-def">生物借助于自然选择和进化而形成的对日照长短规律性变化的反应方式。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">昼夜节律（Circadian rhythm）</div>
-        <div class="term-def">生物的生理活动具有昼夜周期性变化，受外源性周期和内源性生物钟影响。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">阳生植物 / 阴生植物</div>
-        <div class="term-def">阳生植物需强光才能正常生长；阴生植物耐弱光，强光下受害。两者在补偿点、饱和点等光合特性上差异显著。</div>
-      </div>
+    <div class="tgrid">
+      <div class="tcard hot"><div class="tn">光周期现象（Photoperiodism）</div><div class="td">生物借助自然选择和进化形成的对日照长短规律性变化的反应方式。植物开花、动物繁殖/换毛/迁徙均受光周期调控。</div></div>
+      <div class="tcard"><div class="tn">昼夜节律（Circadian rhythm）</div><div class="td">生物生理活动具有昼夜周期性变化，受外源性周期（光、温、湿等）和内源性生物钟双重控制。</div></div>
+      <div class="tcard"><div class="tn">阳生植物 / 阴生植物</div><div class="td">阳生植物需强光，补偿点和饱和点高；阴生植物耐弱光，补偿点低，强光下受害。</div></div>
     </div>
   </div>
-
-  <div class="section">
-    <h4>植物光周期类型</h4>
-    <table class="compare-table">
-      <tr><th>类型</th><th>特征</th><th>代表植物</th></tr>
+  <div class="sec">
+    <h4>植物光周期4种类型（必考）</h4>
+    <table class="ct">
+      <tr><th>类型</th><th>条件</th><th>代表植物</th></tr>
       <tr><td><strong>长日照植物</strong></td><td>日照长于临界日长才能开花</td><td>小麦、油菜、菠菜</td></tr>
       <tr><td><strong>短日照植物</strong></td><td>日照短于临界日长才能开花</td><td>水稻、大豆、菊花</td></tr>
-      <tr><td><strong>中日照植物</strong></td><td>在特定的中等日照长度下开花</td><td>甘蔗</td></tr>
-      <tr><td><strong>日中性植物</strong></td><td>开花对日照长度不敏感</td><td>番茄、黄瓜、蒲公英</td></tr>
+      <tr><td><strong>中日照植物</strong></td><td>特定中等日照长度才能开花</td><td>甘蔗</td></tr>
+      <tr><td><strong>日中性植物</strong></td><td>开花对日照长度不敏感</td><td>番茄、黄瓜</td></tr>
     </table>
   </div>
-
-  <div class="section">
+  <div class="sec">
     <h4>动物的光周期现象</h4>
-    <ul class="content-list">
-      <li><strong>繁殖：</strong>长日照动物（春夏繁殖）和短日照动物（秋冬繁殖）受光周期调控</li>
-      <li><strong>换毛与换羽：</strong>随日照变化而改变毛色或羽色</li>
-      <li><strong>昆虫滞育：</strong>在不利季节停止发育，以度过恶劣环境</li>
-      <li><strong>动物迁徙：</strong>光周期是触发候鸟迁徙的重要信号</li>
+    <ul class="cl">
+      <li><strong>繁殖：</strong>长日照动物（春夏繁殖，如仓鼠）/ 短日照动物（秋冬繁殖，如绵羊）</li>
+      <li><strong>换毛与换羽：</strong>随日照变化改变毛色（如白鼬）</li>
+      <li><strong>昆虫滞育：</strong>日照缩短触发滞育，停止发育以度过恶劣季节</li>
+      <li><strong>候鸟迁徙：</strong>光周期是触发候鸟迁徙的重要信号</li>
     </ul>
   </div>
-  <div class="back-top"><a href="#top">↑ 回到顶部</a></div>
+  <div class="bt"><a href="#top">↑ 顶部</a></div>
 </div>
 
 <!-- CH2b -->
 <div class="chapter" id="ch2b">
   <h3>第二章（第2节）：生物与温度的关系</h3>
-
-  <div class="section">
+  <div class="sec">
     <h4>核心名词</h4>
-    <div class="term-grid">
-      <div class="term-card">
-        <div class="term-name">内温动物（Endotherm）</div>
-        <div class="term-def">通过自身体内氧化代谢产热来调节体温的动物，即恒温动物（鸟类、哺乳类）。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">外温动物（Ectotherm）</div>
-        <div class="term-def">体温随外界温度变化而变化的动物，即变温动物（鱼类、两栖类、爬行类）。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">异温动物（Heterotherm）</div>
-        <div class="term-def">体温调节机制介于变温与恒温之间的动物，如冬眠的内温动物，或可自主升温的某些外温动物。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">有效积温法则</div>
-        <div class="term-def">生物完成某一发育阶段所需要的总热量（有效积温）是常数。公式：K = N(T − C)。其中 K 为有效积温，N 为发育历期，T 为平均温度，C 为生物学零度。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">贝格曼规律（Bergmann's Rule）</div>
-        <div class="term-def">高纬度地区的恒温动物个体比低纬度同类个体大（体积增大可减少相对散热面积）。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">阿伦规律（Allen's Rule）</div>
-        <div class="term-def">高纬度地区恒温动物身体突出部分（四肢、尾巴、外耳）有变小变短的趋势，以减少散热。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">热中性区（Thermoneutral zone）</div>
-        <div class="term-def">在某一环境温度范围内，动物代谢率最低，耗氧量不随环境温度改变，在此温度区间内维持最低代谢。</div>
-      </div>
+    <div class="tgrid">
+      <div class="tcard hot"><div class="tn">有效积温法则</div><div class="td">生物完成某一发育阶段所需总热量（有效积温）是常数K。公式：<strong>K = N(T−C)</strong>。K：积温常数，N：发育历期（天），T：平均温度，C：生物学零度。</div></div>
+      <div class="tcard hot"><div class="tn">内温动物（Endotherm）</div><div class="td">通过自身体内氧化代谢产热来调节体温，即恒温动物（绝大多数鸟类和哺乳类）。</div></div>
+      <div class="tcard hot"><div class="tn">外温动物（Ectotherm）</div><div class="td">体温随外界温度改变而改变，即变温动物（鱼类、两栖类、爬行类）。</div></div>
+      <div class="tcard"><div class="tn">异温动物（Heterotherm）</div><div class="td">体温调节机制介于变温和恒温之间。如冬眠的内温动物，或某些可自主升温的外温动物。</div></div>
+      <div class="tcard hot"><div class="tn">贝格曼规律（Bergmann's Rule）</div><div class="td">高纬度地区的恒温动物个体比低纬度同类个体<strong>大</strong>。体积增大→相对散热面积减小→保温。</div></div>
+      <div class="tcard hot"><div class="tn">阿伦规律（Allen's Rule）</div><div class="td">高纬度地区恒温动物身体突出部分（四肢、尾巴、外耳）变<strong>短变小</strong>，以减少散热。</div></div>
+      <div class="tcard"><div class="tn">热中性区（Thermoneutral zone）</div><div class="td">动物代谢率最低的环境温度范围，耗氧量不随环境温度改变。</div></div>
     </div>
   </div>
-
-  <div class="section">
-    <h4>有效积温法则的应用</h4>
-    <div class="formula-box">K = N(T − C)　　K：有效积温（常数），N：发育历期（天），T：平均温度，C：生物学零度</div>
-    <ul class="content-list">
+  <div class="sec">
+    <h4>有效积温法则的5大应用</h4>
+    <ul class="cl">
       <li>预测某地区害虫发生的世代数</li>
-      <li>作为农业规划、引种、作物布局和农时预测的依据</li>
+      <li>农业规划、引种、作物布局和农时预测</li>
       <li>预测生物地理分布北界</li>
       <li>预测害虫来年发生程度</li>
-      <li>计算天敌昆虫合适的释放时间</li>
+      <li>计算天敌昆虫合适的释放时间（生物防治）</li>
     </ul>
   </div>
-
-  <div class="section">
-    <h4>内温动物对低温的适应方式</h4>
-    <table class="compare-table">
+  <div class="sec">
+    <h4>内温动物对低温的适应（简答题重点）</h4>
+    <table class="ct">
       <tr><th>适应类型</th><th>具体方式</th></tr>
       <tr><td><strong>形态适应</strong></td><td>贝格曼规律（体型增大）；阿伦规律（附肢缩短）</td></tr>
-      <tr><td><strong>生理适应</strong></td><td>颤抖性产热与非颤抖性产热；逆流热交换机制；局部异温性；热中性区；适应性低体温（冬眠）</td></tr>
-      <tr><td><strong>行为适应</strong></td><td>迁徙、集群、穴居</td></tr>
+      <tr><td><strong>生理适应</strong></td><td>① 颤抖性产热与非颤抖性产热；② 逆流热交换机制（动静脉并排，热量回收）；③ 局部异温性（体末端温度低于核心温度）；④ 热中性区；⑤ 适应性低体温（冬眠）</td></tr>
+      <tr><td><strong>行为适应</strong></td><td>迁徙、集群（减少散热面积）、穴居</td></tr>
     </table>
   </div>
-  <div class="back-top"><a href="#top">↑ 回到顶部</a></div>
+  <!-- 章节框图 -->
+  <div class="sec">
+    <h4>📊 温度与生物关系框图</h4>
+    <div class="mindmap-wrap">
+<svg viewBox="0 0 860 200" xmlns="http://www.w3.org/2000/svg" style="font-family:'PingFang SC',Arial,sans-serif">
+<defs><marker id="a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#52b788" stroke-width="1.5" stroke-linecap="round"/></marker></defs>
+<rect x="340" y="78" width="180" height="44" rx="8" fill="#1a4731"/>
+<text x="430" y="105" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">温度对生物的作用</text>
+<!-- 左侧 -->
+<rect x="20" y="38" width="155" height="36" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="97" y="56" text-anchor="middle" fill="#fff" font-size="11">有效积温法则</text>
+<text x="97" y="68" text-anchor="middle" fill="#95d5b2" font-size="10">K=N(T-C) → 5大应用</text>
+<line x1="175" y1="56" x2="340" y2="95" stroke="#52b788" stroke-width="1" marker-end="url(#a2)" fill="none"/>
+<rect x="20" y="96" width="155" height="36" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="97" y="114" text-anchor="middle" fill="#fff" font-size="11">动物类型划分</text>
+<text x="97" y="126" text-anchor="middle" fill="#95d5b2" font-size="10">外温/内温/异温动物</text>
+<line x1="175" y1="114" x2="340" y2="108" stroke="#52b788" stroke-width="1" marker-end="url(#a2)" fill="none"/>
+<rect x="20" y="154" width="155" height="36" rx="6" fill="#52b788" stroke="#95d5b2" stroke-width="0.5"/>
+<text x="97" y="172" text-anchor="middle" fill="#0d2b1c" font-size="11">分布规律</text>
+<text x="97" y="184" text-anchor="middle" fill="#1a4731" font-size="10">Bergmann/Allen规律</text>
+<line x1="175" y1="172" x2="340" y2="120" stroke="#52b788" stroke-width="1" marker-end="url(#a2)" fill="none"/>
+<!-- 右侧 -->
+<rect x="685" y="32" width="155" height="36" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="762" y="50" text-anchor="middle" fill="#fff" font-size="11">对低温的适应</text>
+<text x="762" y="62" text-anchor="middle" fill="#95d5b2" font-size="10">形态·生理·行为（5点）</text>
+<line x1="685" y1="50" x2="520" y2="96" stroke="#95d5b2" stroke-width="1" marker-end="url(#a2)" fill="none"/>
+<rect x="685" y="84" width="155" height="36" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="762" y="102" text-anchor="middle" fill="#fff" font-size="11">对高温的适应</text>
+<text x="762" y="114" text-anchor="middle" fill="#95d5b2" font-size="10">形态·生理·行为</text>
+<line x1="685" y1="102" x2="520" y2="108" stroke="#95d5b2" stroke-width="1" marker-end="url(#a2)" fill="none"/>
+<rect x="685" y="136" width="155" height="36" rx="6" fill="#52b788" stroke="#95d5b2" stroke-width="0.5"/>
+<text x="762" y="154" text-anchor="middle" fill="#0d2b1c" font-size="11">温度与植物</text>
+<text x="762" y="166" text-anchor="middle" fill="#1a4731" font-size="10">春化/生物学零度</text>
+<line x1="685" y1="154" x2="520" y2="120" stroke="#95d5b2" stroke-width="1" marker-end="url(#a2)" fill="none"/>
+</svg>
+    </div>
+  </div>
+  <div class="bt"><a href="#top">↑ 顶部</a></div>
 </div>
 
 <!-- CH3a -->
 <div class="chapter" id="ch3a">
   <h3>第三章（第1节）：生物与水的关系</h3>
-
-  <div class="section">
-    <h4>核心名词</h4>
-    <div class="term-grid">
-      <div class="term-card">
-        <div class="term-name">旱生植物（Xerophytes）</div>
-        <div class="term-def">能在干旱环境中生活的植物，具有减少蒸腾、储水或获取水分的适应特征，分为少浆液型和多浆液型。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">湿生植物（Hygrophytes）</div>
-        <div class="term-def">需要生活在潮湿环境中的植物，不耐干旱，抗旱能力最弱。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">中生植物（Mesophytes）</div>
-        <div class="term-def">生活在水分适中环境中的植物，是植物中种类最多、分布最广的生态类型。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">高渗性 / 低渗性 / 等渗性</div>
-        <div class="term-def">生物体液渗透压与外界环境的相对关系。淡水鱼为高渗性（血液>水），海洋硬骨鱼为低渗性（血液&lt;海水），海洋软骨鱼为等渗性。</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h4>鱼类的渗透压调节（重点）</h4>
-    <table class="compare-table">
-      <tr><th>鱼类类型</th><th>渗透压关系</th><th>排水方式</th><th>补水方式</th></tr>
-      <tr><td><strong>淡水硬骨鱼</strong></td><td>高渗性（血液渗透压 > 水）</td><td>肾脏发达，排大量低浓度尿</td><td>鳃主动从稀溶液中摄取盐离子</td></tr>
-      <tr><td><strong>海洋硬骨鱼</strong></td><td>低渗性（血液渗透压 &lt; 海水）</td><td>肾小球退化，排极少低渗尿；鳃主动向外排盐</td><td>大量吞海水补充水分</td></tr>
-      <tr><td><strong>海洋软骨鱼</strong></td><td>等渗性（靠高浓度尿素和氧化三甲胺维持）</td><td>直肠腺和肾脏排出多余Na⁺</td><td>血液高渗透压维持水平衡</td></tr>
-      <tr><td><strong>广盐性洄游鱼</strong></td><td>具有两种调节特征</td><td>淡水中排尿量大；海水中排尿少，鳃排盐</td><td>海水中大量吞水；淡水中摄取盐</td></tr>
+  <div class="sec">
+    <h4>鱼类渗透压调节（必考简答/论述）</h4>
+    <table class="ct">
+      <tr><th>鱼类</th><th>渗透压关系</th><th>排水方式</th><th>补水方式</th></tr>
+      <tr><td><strong>淡水硬骨鱼</strong></td><td>高渗性（血液&gt;水）</td><td>肾脏发达，排大量低浓度尿</td><td>鳃主动从稀溶液摄取盐离子</td></tr>
+      <tr><td><strong>海洋硬骨鱼</strong></td><td>低渗性（血液&lt;海水）</td><td>肾小球退化，排极少尿；鳃主动向外排盐</td><td>大量吞海水</td></tr>
+      <tr><td><strong>海洋软骨鱼</strong></td><td>等渗性（靠高浓度尿素+氧化三甲胺维持）</td><td>直肠腺+肾脏排出多余Na⁺</td><td>血液高渗透压维持水平衡</td></tr>
+      <tr><td><strong>广盐性洄游鱼</strong></td><td>具淡水和海水两种调节特征</td><td>淡水中排尿量大；海水中鳃排盐</td><td>海水中大量吞水</td></tr>
     </table>
   </div>
-
-  <div class="section">
-    <h4>陆生动物保持水平衡的适应方式</h4>
-    <ul class="content-list">
-      <li><strong>得水：</strong>直接饮水或从食物中得水；昆虫通过体表从潮湿空气中吸水；氧化产生代谢水（蜂鸟）；骆驼大量饮水贮存</li>
-      <li><strong>减少蒸发失水：</strong>节肢动物具角质层及蜡膜；爬行动物具鳞片；兽类与鸟类皮肤防止水分蒸发</li>
-      <li><strong>减少呼吸失水：</strong>昆虫通过气孔开闭调控；荒漠鸟兽利用逆流交换机理（呼出气体在气管中水汽凝结回收）</li>
-      <li><strong>减少排泄和粪便失水：</strong>尿液浓缩（肾小管重吸收加强）</li>
+  <div class="sec">
+    <h4>植物按水分适应分类</h4>
+    <table class="ct">
+      <tr><th>类型</th><th>分类</th><th>举例</th></tr>
+      <tr><td>水生植物</td><td>沉水 / 浮水 / 挺水</td><td>轮藻 / 浮萍、睡莲 / 芦苇、水稻</td></tr>
+      <tr><td>陆生植物</td><td>湿生 / 中生 / 少浆旱生 / 多浆旱生</td><td>秋海棠 / 大多数农作物 / 刺叶石竹 / 仙人掌</td></tr>
+    </table>
+  </div>
+  <div class="sec">
+    <h4>陆生动物保持水平衡的适应（简答重点）</h4>
+    <ul class="cl">
+      <li><strong>得水：</strong>直接饮水/从食物获得；昆虫从潮湿空气吸水；氧化代谢水；骆驼大量储水</li>
+      <li><strong>减少蒸发失水：</strong>节肢动物角质层+蜡膜；爬行类鳞片；兽类和鸟类皮肤防水</li>
+      <li><strong>减少呼吸失水：</strong>昆虫气孔开闭；荒漠鸟兽利用逆流交换机理（呼出气在气管中冷凝回收水分）</li>
+      <li><strong>减少排泄失水：</strong>尿液浓缩</li>
       <li><strong>行为适应：</strong>夜间活动、穴居、夏眠</li>
     </ul>
   </div>
-  <div class="back-top"><a href="#top">↑ 回到顶部</a></div>
+  <div class="bt"><a href="#top">↑ 顶部</a></div>
 </div>
 
 <!-- CH3b -->
 <div class="chapter" id="ch3b">
-  <h3>第三章（第2-3节）：生物与大气和土壤的关系</h3>
-
-  <div class="section">
-    <h4>核心名词</h4>
-    <div class="term-grid">
-      <div class="term-card">
-        <div class="term-name">盐碱土植物的三种类型</div>
-        <div class="term-def">①聚盐性植物（原生质耐盐，细胞液浓度高）；②泌盐植物（通过盐腺将多余盐排出）；③不透盐性植物（根细胞对盐透过性极小，渗透压高）。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">沙生植物</div>
-        <div class="term-def">具有抗风沙、耐沙埋、抗日灼、耐干旱贫瘠等特性。被沙埋后能长出不定芽和不定根，根上具由沙粒形成的囊套保护暴露的根。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">土壤的生态作用</div>
-        <div class="term-def">陆地生态系统的基底；是营养物传递系统、再循环系统和废物处理系统；土壤中两个最重要的生态过程是分解过程和固氮过程。</div>
-      </div>
-    </div>
+  <h3>第三章（第2–3节）：大气与土壤</h3>
+  <div class="sec">
+    <h4>土壤特殊植物（高频考点）</h4>
+    <table class="ct">
+      <tr><th>植物类型</th><th>适应特征</th></tr>
+      <tr><td><strong>聚盐性植物</strong></td><td>原生质抗盐性极强，细胞液浓度特别高，根系渗透压高，能吸收高浓度土壤溶液中的水分</td></tr>
+      <tr><td><strong>泌盐植物</strong></td><td>将根吸入的多余盐，通过茎叶表面密布的盐腺排出体外</td></tr>
+      <tr><td><strong>不透盐性植物</strong></td><td>根细胞对盐类透过性极小，几乎不吸收土壤盐类，但细胞渗透压高，仍能从盐碱土中吸水</td></tr>
+      <tr><td><strong>沙生植物</strong></td><td>抗风沙、耐沙埋（被埋后长出不定芽/根）、根上具沙粒囊套保护；具旱生植物特征</td></tr>
+      <tr><td><strong>旱生植物</strong></td><td>主根长、侧根宽；叶极端缩小甚至退化；高渗透压；极端干旱时进入休眠</td></tr>
+    </table>
   </div>
-
-  <div class="section">
-    <h4>动物对缺氧的适应</h4>
-    <ul class="content-list">
-      <li><strong>鱼类：</strong>低氧驯化后增加血氧容量和血氧亲和力；部分鱼类靠厌氧代谢（如金鱼产生乳酸→酒精由鳃排出）</li>
-      <li><strong>内温动物：</strong>过度通气（增加呼吸深度）；肺泡膜气体弥散能力增高；毛细血管增生；骨骼肌中肌红蛋白浓度增加；红细胞数量与血红蛋白浓度升高</li>
+  <div class="sec">
+    <h4>土壤的生态作用</h4>
+    <ul class="cl">
+      <li>陆地生态系统的<strong>基底</strong>，具有营养物传递、再循环和废物处理功能</li>
+      <li>土壤中两个最重要的生态过程：<strong>分解过程</strong>和<strong>固氮过程</strong></li>
+      <li>为陆生植物提供基质（萌芽、支撑、腐烂、水和矿质营养储存）</li>
+      <li>为陆生动物提供栖息地</li>
     </ul>
   </div>
-  <div class="back-top"><a href="#top">↑ 回到顶部</a></div>
+  <div class="bt"><a href="#top">↑ 顶部</a></div>
 </div>
-
-<!-- ═══════════════════════════════════════════════════ -->
-<!-- PART 2 -->
-<!-- ═══════════════════════════════════════════════════ -->
-<div class="part-header" id="part2">
+<!-- ═══════════════ PART 2 ═══════════════ -->
+<div class="part-hdr" id="p2">
   <span class="part-badge">第二部分</span>
   <h2>种群生态学（Ch 4–7）</h2>
+</div>
+
+<!-- 第二部分总框图 -->
+<div class="mindmap-wrap">
+<svg viewBox="0 0 960 200" xmlns="http://www.w3.org/2000/svg" style="font-family:'PingFang SC',Arial,sans-serif">
+<defs><marker id="a3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#52b788" stroke-width="1.5" stroke-linecap="round"/></marker></defs>
+<rect x="370" y="78" width="220" height="44" rx="8" fill="#1a4731"/>
+<text x="480" y="105" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">种群生态学</text>
+<rect x="20" y="40" width="150" height="38" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="95" y="58" text-anchor="middle" fill="#fff" font-size="11">数量特征</text>
+<text x="95" y="71" text-anchor="middle" fill="#95d5b2" font-size="10">密度/生命表/增长模型</text>
+<line x1="170" y1="59" x2="370" y2="95" stroke="#52b788" stroke-width="1" marker-end="url(#a3)" fill="none"/>
+<rect x="20" y="96" width="150" height="38" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="95" y="114" text-anchor="middle" fill="#fff" font-size="11">种群调节</text>
+<text x="95" y="126" text-anchor="middle" fill="#95d5b2" font-size="10">外源/内源/集合种群</text>
+<line x1="170" y1="115" x2="370" y2="108" stroke="#52b788" stroke-width="1" marker-end="url(#a3)" fill="none"/>
+<rect x="20" y="152" width="150" height="38" rx="6" fill="#52b788" stroke="#95d5b2" stroke-width="0.5"/>
+<text x="95" y="170" text-anchor="middle" fill="#0d2b1c" font-size="11">质量变化（进化）</text>
+<text x="95" y="182" text-anchor="middle" fill="#1a4731" font-size="10">自然选择/遗传漂变</text>
+<line x1="170" y1="171" x2="370" y2="120" stroke="#52b788" stroke-width="1" marker-end="url(#a3)" fill="none"/>
+<rect x="790" y="30" width="150" height="38" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="865" y="48" text-anchor="middle" fill="#fff" font-size="11">生活史对策</text>
+<text x="865" y="61" text-anchor="middle" fill="#95d5b2" font-size="10">r/K对策·CSR三角形</text>
+<line x1="790" y1="49" x2="590" y2="95" stroke="#95d5b2" stroke-width="1" marker-end="url(#a3)" fill="none"/>
+<rect x="790" y="84" width="150" height="38" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="865" y="102" text-anchor="middle" fill="#fff" font-size="11">种内关系</text>
+<text x="865" y="115" text-anchor="middle" fill="#95d5b2" font-size="10">密度效应/自疏/领域</text>
+<line x1="790" y1="103" x2="590" y2="108" stroke="#95d5b2" stroke-width="1" marker-end="url(#a3)" fill="none"/>
+<rect x="790" y="138" width="150" height="38" rx="6" fill="#52b788" stroke="#95d5b2" stroke-width="0.5"/>
+<text x="865" y="156" text-anchor="middle" fill="#0d2b1c" font-size="11">种间关系</text>
+<text x="865" y="168" text-anchor="middle" fill="#1a4731" font-size="10">竞争/捕食/共生/LV模型</text>
+<line x1="790" y1="157" x2="590" y2="120" stroke="#95d5b2" stroke-width="1" marker-end="url(#a3)" fill="none"/>
+</svg>
 </div>
 
 <!-- CH4 -->
 <div class="chapter" id="ch4">
   <h3>第四章：种群及其基本特征</h3>
-
-  <div class="section">
+  <div class="sec">
     <h4>核心名词</h4>
-    <div class="term-grid">
-      <div class="term-card">
-        <div class="term-name">种群（Population）</div>
-        <div class="term-def">在同一时期、同一地域内，同种生物个体的集合。种群是物种在自然界中存在的基本单位，也是生物群落的基本组成单元。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">种群密度（Population density）</div>
-        <div class="term-def">单位面积、单位体积或单位生境中个体的数目。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">内禀增长率（r）</div>
-        <div class="term-def">在食物、空间不受限制，气候适宜，无天敌等理想条件下，种群的最大增长率。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">环境容纳量（K值）</div>
-        <div class="term-def">在特定环境条件下，某种群能维持的最大个体数量。逻辑斯谛增长的上限。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">生命表（Life table）</div>
-        <div class="term-def">用来描述种群死亡过程的工具，记录各年龄组的存活率、死亡率等。分动态生命表（同生群）、静态生命表（某时刻年龄结构）和综合生命表（含出生率）。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">集合种群（Metapopulation）</div>
-        <div class="term-def">由空间上相互隔离、但彼此之间有个体迁移联系的若干亚种群（局域种群）组成的种群体系。</div>
-      </div>
+    <div class="tgrid">
+      <div class="tcard hot"><div class="tn">种群（Population）</div><div class="td">在同一时期、同一地域内，同种生物个体的集合。是物种在自然界存在的基本单位，也是群落的基本组成单元。</div></div>
+      <div class="tcard hot"><div class="tn">内禀增长率（r）</div><div class="td">食物空间不受限、气候适宜、无天敌等理想条件下，种群的最大增长率。</div></div>
+      <div class="tcard hot"><div class="tn">环境容纳量（K值）</div><div class="td">在特定环境条件下，某种群能维持的最大个体数量，即逻辑斯谛增长的上限。</div></div>
+      <div class="tcard hot"><div class="tn">综合生命表</div><div class="td">在动态生命表基础上，添加了各年龄出生率的生命表，同时包含存活率、死亡率和出生率，是信息最全面的生命表。</div></div>
+      <div class="tcard"><div class="tn">动态生命表</div><div class="td">总结一组大约同时出生的个体（同生群）从出生到死亡命运的生命表。</div></div>
+      <div class="tcard"><div class="tn">静态生命表</div><div class="td">对某一特定时间种群年龄结构进行调查编制的生命表，用于难以获得动态生命表数据的情况。</div></div>
+      <div class="tcard"><div class="tn">集合种群（Metapopulation）</div><div class="td">由空间上相互隔离但有个体迁移联系的若干亚种群组成的种群体系。</div></div>
     </div>
   </div>
-
-  <div class="section">
-    <h4>种群增长模型对比</h4>
-    <table class="compare-table">
-      <tr><th>模型</th><th>公式</th><th>假设</th><th>增长曲线</th></tr>
-      <tr><td><strong>J型（指数增长）</strong><br>与密度无关</td><td>连续：Nₜ = N₀eʳᵗ<br>离散：Nₜ₊₁ = λNₜ</td><td>增长率不受密度影响，食物空间无限</td><td>J 型曲线</td></tr>
-      <tr><td><strong>S型（逻辑斯谛增长）</strong><br>与密度有关</td><td>dN/dt = rN(1 − N/K)<br>积分：Nₜ = K/(1 + eᵃ⁻ʳᵗ)</td><td>①存在环境容纳量 K；②增长率随密度上升按比例降低</td><td>S 型曲线，在 N=K/2 时增长速率最大</td></tr>
+  <div class="sec">
+    <h4>种群增长模型对比（必考）</h4>
+    <table class="ct">
+      <tr><th>模型</th><th>公式</th><th>核心假设</th><th>曲线形态</th></tr>
+      <tr><td><strong>J型（指数增长）</strong><br>与密度无关</td><td>连续：Nₜ = N₀eʳᵗ<br>离散：Nₜ₊₁ = λNₜ</td><td>增长率不受密度影响，食物空间无限</td><td>J型，无上限</td></tr>
+      <tr><td><strong>S型（逻辑斯谛增长）</strong><br>与密度有关</td><td>dN/dt = rN(1 − N/K)<br>积分：Nₜ = K/(1 + eᵃ⁻ʳᵗ)</td><td>① 存在环境容纳量K；② 增长率随密度按比例降低</td><td>S型，N=K/2时增速最大（MSY依据）</td></tr>
     </table>
+    <div class="kbox"><div class="kt">⭐ S型增长关键点</div><ul class="cl"><li>当N = K/2时，种群增长速率最大，这是最大持续产量（MSY）的理论依据</li><li>当N = K时，增长速率 = 0，种群稳定</li></ul></div>
   </div>
-
-  <div class="section">
-    <h4>种群调节理论</h4>
-    <table class="compare-table">
-      <tr><th>理论类型</th><th>代表学说</th><th>核心观点</th></tr>
-      <tr><td><strong>外源性（密度无关）</strong></td><td>气候学派</td><td>种群数量由气候等非密度制约因素决定</td></tr>
-      <tr><td><strong>外源性（密度制约）</strong></td><td>生物学派</td><td>食物竞争、天敌等密度制约因素调节种群</td></tr>
-      <tr><td><strong>内源性自动调节</strong></td><td>行为调节、内分泌调节、遗传调节</td><td>种群通过自身密度感受机制进行调节</td></tr>
-    </table>
+  <!-- 框图 -->
+  <div class="sec">
+    <h4>📊 种群生态学知识框图</h4>
+    <div class="mindmap-wrap">
+<svg viewBox="0 0 900 240" xmlns="http://www.w3.org/2000/svg" style="font-family:'PingFang SC',Arial,sans-serif">
+<defs><marker id="a4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#52b788" stroke-width="1.5" stroke-linecap="round"/></marker></defs>
+<!-- 层1：种群 -->
+<rect x="360" y="10" width="180" height="38" rx="8" fill="#1a4731"/>
+<text x="450" y="34" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">种群</text>
+<!-- 层2 -->
+<rect x="40" y="72" width="140" height="36" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="110" y="90" text-anchor="middle" fill="#fff" font-size="11">数量统计</text>
+<text x="110" y="102" text-anchor="middle" fill="#95d5b2" font-size="10">密度/生命表/增长率</text>
+<line x1="180" y1="90" x2="360" y2="29" stroke="#52b788" stroke-width="1" marker-end="url(#a4)" fill="none"/>
+<rect x="205" y="72" width="140" height="36" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="275" y="90" text-anchor="middle" fill="#fff" font-size="11">增长模型</text>
+<text x="275" y="102" text-anchor="middle" fill="#95d5b2" font-size="10">J型（指数）/ S型（逻辑斯谛）</text>
+<line x1="345" y1="90" x2="400" y2="48" stroke="#52b788" stroke-width="1" marker-end="url(#a4)" fill="none"/>
+<rect x="370" y="72" width="140" height="36" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="440" y="90" text-anchor="middle" fill="#fff" font-size="11">种群调节</text>
+<text x="440" y="102" text-anchor="middle" fill="#95d5b2" font-size="10">外源·内源·集合种群</text>
+<line x1="440" y1="108" x2="450" y2="48" stroke="#52b788" stroke-width="1" marker-end="url(#a4)" fill="none"/>
+<rect x="535" y="72" width="140" height="36" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="605" y="90" text-anchor="middle" fill="#fff" font-size="11">遗传进化</text>
+<text x="605" y="102" text-anchor="middle" fill="#95d5b2" font-size="10">自然选择/遗传漂变</text>
+<line x1="605" y1="108" x2="510" y2="48" stroke="#52b788" stroke-width="1" marker-end="url(#a4)" fill="none"/>
+<rect x="700" y="72" width="140" height="36" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="770" y="90" text-anchor="middle" fill="#fff" font-size="11">生活史对策</text>
+<text x="770" y="102" text-anchor="middle" fill="#95d5b2" font-size="10">r/K对策·CSR</text>
+<line x1="770" y1="108" x2="540" y2="48" stroke="#52b788" stroke-width="1" marker-end="url(#a4)" fill="none"/>
+<!-- 层3（增长模型子节点）-->
+<rect x="90" y="148" width="120" height="32" rx="5" fill="#52b788" stroke="#95d5b2" stroke-width="0.5"/>
+<text x="150" y="163" text-anchor="middle" fill="#0d2b1c" font-size="10">J型 dN/dt=rN</text>
+<text x="150" y="175" text-anchor="middle" fill="#1a4731" font-size="10">无密度制约</text>
+<line x1="150" y1="148" x2="220" y2="108" stroke="#95d5b2" stroke-width="0.8" marker-end="url(#a4)" fill="none"/>
+<rect x="230" y="148" width="140" height="32" rx="5" fill="#e9c46a" stroke="#b5830a" stroke-width="0.5"/>
+<text x="300" y="163" text-anchor="middle" fill="#3a2800" font-size="10">S型 dN/dt=rN(1-N/K)</text>
+<text x="300" y="175" text-anchor="middle" fill="#5a4000" font-size="10">N=K/2时增速最大(MSY)</text>
+<line x1="300" y1="148" x2="285" y2="108" stroke="#b5830a" stroke-width="0.8" marker-end="url(#a4)" fill="none"/>
+<!-- 层3（调节子节点）-->
+<rect x="385" y="148" width="120" height="32" rx="5" fill="#52b788" stroke="#95d5b2" stroke-width="0.5"/>
+<text x="445" y="163" text-anchor="middle" fill="#0d2b1c" font-size="10">外源：气候/天敌</text>
+<text x="445" y="175" text-anchor="middle" fill="#1a4731" font-size="10">密度无关/有关</text>
+<line x1="445" y1="148" x2="440" y2="108" stroke="#95d5b2" stroke-width="0.8" marker-end="url(#a4)" fill="none"/>
+<!-- 层3（进化子节点）-->
+<rect x="530" y="148" width="130" height="32" rx="5" fill="#52b788" stroke="#95d5b2" stroke-width="0.5"/>
+<text x="595" y="163" text-anchor="middle" fill="#0d2b1c" font-size="10">遗传瓶颈/建立者效应</text>
+<text x="595" y="175" text-anchor="middle" fill="#1a4731" font-size="10">→物种形成3步骤</text>
+<line x1="595" y1="148" x2="600" y2="108" stroke="#95d5b2" stroke-width="0.8" marker-end="url(#a4)" fill="none"/>
+<text x="450" y="215" text-anchor="middle" fill="#3d5240" font-size="11">两大进化动力：自然选择（外部必然性）vs 遗传漂变（内部偶然性，仅在小种群显著）</text>
+</svg>
+    </div>
   </div>
-  <div class="back-top"><a href="#top">↑ 回到顶部</a></div>
+  <div class="bt"><a href="#top">↑ 顶部</a></div>
 </div>
 
 <!-- CH5 -->
 <div class="chapter" id="ch5">
   <h3>第五章：生物种及其变异与进化</h3>
-
-  <div class="section">
+  <div class="sec">
     <h4>核心名词</h4>
-    <div class="term-grid">
-      <div class="term-card">
-        <div class="term-name">生物种（Biological species）</div>
-        <div class="term-def">能够相互交配并产生可育后代的一群个体，与其他群体之间存在生殖隔离。是物种在自然界中存在的基本单位。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">自然选择（Natural selection）</div>
-        <div class="term-def">对有差别的存活能力和生殖能力的选择，只在具有不同存活和生育能力的遗传上不同的基因型个体之间发生。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">适合度（Fitness）</div>
-        <div class="term-def">估计生物所具有各种特征的适应性及其在进化中继续往后代传递的能力。W（适合度）= m（生殖力）× l（存活力）。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">遗传漂变（Genetic drift）</div>
-        <div class="term-def">基因频率的随机变化，即基因频率在小种群中随机增减的现象。是偶然性因素，与自然选择相对。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">遗传瓶颈（Genetic bottleneck）</div>
-        <div class="term-def">由于环境灾难或过捕等，种群数量急剧下降，导致基因多样性大量丢失，留存下来的基因库与原种群差异显著。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">建立者效应（Founder effect）</div>
-        <div class="term-def">少数个体迁移至新地点建立新种群，新种群与母种群基因频率存在较大差异，随时间推移差异越来越大。</div>
-      </div>
+    <div class="tgrid">
+      <div class="tcard hot"><div class="tn">自然选择（Natural selection）</div><div class="td">对有差别的存活能力和生殖能力的选择，只在具有不同适合度的、遗传上不同的基因型个体之间发生。</div></div>
+      <div class="tcard hot"><div class="tn">适合度（Fitness）</div><div class="td">估计生物所具有各种特征的适应性及其继续往后代传递的能力。W = m（生殖力）× l（存活力）。</div></div>
+      <div class="tcard hot"><div class="tn">遗传漂变（Genetic drift）</div><div class="td">基因频率的随机变化，在小种群中随机增减的现象。是偶然性因素，与自然选择（必然性）相对。</div></div>
+      <div class="tcard hot"><div class="tn">遗传瓶颈（Genetic bottleneck）</div><div class="td">因环境灾难或过捕等，种群数量急剧下降，基因多样性大量丢失，留存基因库与原种群差异显著。</div></div>
+      <div class="tcard hot"><div class="tn">建立者效应（Founder effect）</div><div class="td">少数个体迁移至新地点建立新种群，新种群与母种群基因频率存在较大差异，随时间推移差异越来越大。</div></div>
     </div>
   </div>
-
-  <div class="section">
-    <h4>物种形成的三个步骤与三种方式</h4>
-    <div class="key-box">
-      <div class="key-title">⭐ 物种形成三步骤</div>
-      <ol class="content-list">
-        <li><strong>地理隔离：</strong>由地理障碍使种群间基因不能交流</li>
-        <li><strong>独立进化：</strong>各隔离种群在不同选择压力下分别进化</li>
-        <li><strong>生殖隔离：</strong>形态或遗传差异积累至无法相互交配，物种形成</li>
-      </ol>
-    </div>
-    <table class="compare-table">
-      <tr><th>方式</th><th>含义</th><th>特点</th></tr>
-      <tr><td><strong>异域性物种形成</strong></td><td>通过地理隔离后分化形成新种</td><td>最常见，大多数物种通过此方式形成</td></tr>
-      <tr><td><strong>邻域性物种形成</strong></td><td>在接触边界地带通过局部适应分化</td><td>无完全地理隔离，种群间仍有基因流</td></tr>
-      <tr><td><strong>同域性物种形成</strong></td><td>无地理隔离，在同一地区内由生态分化或多倍体等方式形成</td><td>植物中较常见（多倍体）</td></tr>
+  <div class="sec">
+    <h4>物种形成3步骤 × 3方式</h4>
+    <div class="kbox"><div class="kt">⭐ 物种形成3个步骤（必背顺序）</div><ol class="cl"><li><strong>地理隔离：</strong>地理障碍使种群间基因流断绝</li><li><strong>独立进化：</strong>各隔离种群在不同选择压力下分别进化</li><li><strong>生殖隔离：</strong>形态或遗传差异积累至无法相互交配，新物种形成</li></ol></div>
+    <table class="ct">
+      <tr><th>方式</th><th>是否有地理隔离</th><th>特点</th></tr>
+      <tr><td><strong>异域性物种形成</strong></td><td>有（完全隔离）</td><td>最常见，绝大多数物种形成方式</td></tr>
+      <tr><td><strong>邻域性物种形成</strong></td><td>部分隔离</td><td>在接触边界通过局部适应分化，仍有基因流</td></tr>
+      <tr><td><strong>同域性物种形成</strong></td><td>无地理隔离</td><td>同一地区内，植物多倍体化等方式较常见</td></tr>
     </table>
   </div>
-  <div class="back-top"><a href="#top">↑ 回到顶部</a></div>
+  <div class="bt"><a href="#top">↑ 顶部</a></div>
 </div>
 
 <!-- CH6 -->
 <div class="chapter" id="ch6">
   <h3>第六章：生活史对策</h3>
-
-  <div class="section">
-    <h4>核心名词</h4>
-    <div class="term-grid">
-      <div class="term-card">
-        <div class="term-name">生活史（Life history）</div>
-        <div class="term-def">生物从出生到死亡所经历的全部过程，关键组分包括身体大小、生长率、繁殖和寿命。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">生态对策（生活史对策）</div>
-        <div class="term-def">生物在生存斗争中获得的生存对策，包括能量分配、体型效应、生殖对策、滞育和休眠、迁移、衰老等。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">r-选择</div>
-        <div class="term-def">在不稳定或密度低环境中进化，使种群增长率r最大化。特征：快速发育、小型成体、数量多而个体小的后代、高繁殖能量分配、短世代周期。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">K-选择</div>
-        <div class="term-def">在接近环境容纳量K的稳定环境中进化，适应竞争。特征：慢速发育、大型成体、数量少但体型大的后代、低繁殖能量分配、长世代周期。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">生殖价（Vₓ）</div>
-        <div class="term-def">某一年龄雌体平均能对未来种群增长所做的贡献。通常在生殖开始时达到最高值。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">CSR对策（植物）</div>
-        <div class="term-def">Grime 提出：竞争对策（C-strategy）、胁迫耐受对策（S-strategy）和杂草对策（R-strategy），根据生境干扰和严峻程度分类。</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h4>r-选择 vs K-选择对比</h4>
-    <table class="compare-table">
+  <div class="sec">
+    <h4>r-选择 vs K-选择（必考对比）</h4>
+    <table class="ct">
       <tr><th>特征</th><th>r-选择者</th><th>K-选择者</th></tr>
       <tr><td>生境</td><td>不稳定、短暂、密度低</td><td>稳定、持续、密度接近K</td></tr>
       <tr><td>发育速度</td><td>快速发育</td><td>慢速发育</td></tr>
       <tr><td>体型</td><td>小型成体</td><td>大型成体</td></tr>
-      <tr><td>后代</td><td>数量多、体积小</td><td>数量少、体积大、有亲代投入</td></tr>
-      <tr><td>繁殖</td><td>高繁殖率、早繁殖</td><td>低繁殖率、晚繁殖</td></tr>
+      <tr><td>后代</td><td>数量多、个体小</td><td>数量少、个体大、有亲代投入</td></tr>
+      <tr><td>繁殖</td><td>高繁殖率、早繁殖、一次性繁殖</td><td>低繁殖率、晚繁殖、多次繁殖</td></tr>
       <tr><td>寿命</td><td>短</td><td>长</td></tr>
-      <tr><td>竞争能力</td><td>弱</td><td>强</td></tr>
-      <tr><td>典型代表</td><td>昆虫、一年生植物、小型哺乳类</td><td>大型哺乳类、乔木、信天翁</td></tr>
+      <tr><td>竞争能力</td><td>弱，擅长拓殖新环境</td><td>强，擅长稳定环境竞争</td></tr>
+      <tr><td>典型代表</td><td>昆虫、一年生植物、小型哺乳类、细菌</td><td>大型哺乳类（大象、鲸）、乔木、信天翁</td></tr>
+    </table>
+    <div class="kbox"><div class="kt">⭐ 生殖价（Vₓ）</div><ul class="cl"><li>某一年龄雌体平均能对未来种群增长所做的贡献</li><li>通常在生殖开始时达到最高值，此后逐渐下降</li></ul></div>
+  </div>
+  <div class="sec">
+    <h4>植物CSR三角形对策</h4>
+    <table class="ct">
+      <tr><th>对策</th><th>适应生境</th><th>特征</th></tr>
+      <tr><td><strong>C-对策（竞争）</strong></td><td>低干扰、低胁迫的优良生境</td><td>高竞争力，快速生长，对应K-选择者</td></tr>
+      <tr><td><strong>S-对策（胁迫耐受）</strong></td><td>低干扰、高胁迫的恶劣生境</td><td>耐受不良环境，生长缓慢</td></tr>
+      <tr><td><strong>R-对策（杂草）</strong></td><td>高干扰、低胁迫的扰动生境</td><td>快速繁殖、迅速拓殖，对应r-选择者</td></tr>
     </table>
   </div>
-  <div class="back-top"><a href="#top">↑ 回到顶部</a></div>
+  <div class="bt"><a href="#top">↑ 顶部</a></div>
 </div>
 
 <!-- CH7 -->
 <div class="chapter" id="ch7">
   <h3>第七章：种内与种间关系</h3>
-
-  <div class="section">
+  <div class="sec">
     <h4>核心名词</h4>
-    <div class="term-grid">
-      <div class="term-card">
-        <div class="term-name">密度效应（最后产量恒值法则）</div>
-        <div class="term-def">在一定范围内，植物种群的最终产量（生物量）基本保持恒定，不随播种密度的变化而改变，高密度时个体小但总产量稳定。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">-3/2自疏法则</div>
-        <div class="term-def">在高密度种植中，随密度增大，个体不断死亡（自疏），存活个体的平均干质量与密度之间呈斜率为-3/2的线性关系。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">领域性（Territoriality）</div>
-        <div class="term-def">动物个体或群体宣告或保卫其所占据的空间，排除同种其他个体进入，以保证食物、配偶等资源。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">社会等级（Social hierarchy）</div>
-        <div class="term-def">种群中各个动物的地位有一定顺序等级，高等级个体对食物和配偶有优先权（如啄序）。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">他感作用（Allelopathy）</div>
-        <div class="term-def">一种植物通过分泌化学物质，影响另一种植物或微生物生长发育的现象（可为正效应或负效应）。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">生态位（Niche）</div>
-        <div class="term-def">物种在生物群落或生态系统中占据的地位和角色，包括生物维持其种群所必需的各种条件、所利用的资源及其在环境中出现的时间。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">基础生态位 / 实际生态位</div>
-        <div class="term-def">基础生态位：物种能栖息的理论上最大空间；实际生态位：由于竞争等因素，物种实际能占据的生态位空间（≤基础生态位）。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">竞争排斥原理（高斯法则）</div>
-        <div class="term-def">生态位相同的两个物种不可能在同一地区内长期共存，必然出现生态位分化（栖息地、食性、活动时间等方面的分化）。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">协同进化（Coevolution）</div>
-        <div class="term-def">一个物种的进化对另一物种也产生选择压力，相互推动彼此进化的过程。如捕食者与猎物、植物与传粉者。</div>
-      </div>
+    <div class="tgrid">
+      <div class="tcard hot"><div class="tn">最后产量恒值法则</div><div class="td">在一定范围内，植物种群的最终产量（生物量）基本恒定，不随播种密度改变——密度高则个体小，密度低则个体大。</div></div>
+      <div class="tcard hot"><div class="tn">-3/2自疏法则</div><div class="td">高密度种植中，随密度增大个体不断死亡（自疏），存活个体平均干质量与密度之间呈斜率为<strong>-3/2</strong>的直线关系。</div></div>
+      <div class="tcard hot"><div class="tn">生态位（Niche）</div><div class="td">物种在生物群落中占据的地位和角色，包括维持种群所必需的各种条件、所利用的资源及在环境中出现的时间。</div></div>
+      <div class="tcard hot"><div class="tn">基础生态位 vs 实际生态位</div><div class="td">基础生态位：物种能栖息的理论上最大空间；实际生态位：由于竞争等因素，物种实际占据的空间（≤基础生态位）。</div></div>
+      <div class="tcard hot"><div class="tn">竞争排斥原理（高斯法则）</div><div class="td">生态位相同的两个物种不可能在同一地区内长期共存，必然出现生态位分化（栖息地、食性、活动时间等分化）。</div></div>
+      <div class="tcard"><div class="tn">协同进化（Coevolution）</div><div class="td">一个物种的进化对另一物种也产生选择压力，相互推动彼此进化的过程。如捕食者与猎物、植物与传粉者（红皇后效应）。</div></div>
     </div>
   </div>
-
-  <div class="section">
-    <h4>Lotka-Volterra 种间竞争模型结果</h4>
-    <table class="compare-table">
+  <div class="sec">
+    <h4>LV种间竞争模型4种结局（必考）</h4>
+    <table class="ct">
       <tr><th>条件</th><th>结果</th></tr>
-      <tr><td>K₁ > K₂/α，且 K₂ &lt; K₁/β</td><td>物种1取胜，物种2被排除</td></tr>
-      <tr><td>K₂ > K₁/β，且 K₁ &lt; K₂/α</td><td>物种2取胜，物种1被排除</td></tr>
-      <tr><td>K₁ > K₂/α，且 K₂ > K₁/β</td><td>不稳定共存（取决于初始密度，任一种都可能取胜）</td></tr>
-      <tr><td>K₁ &lt; K₂/α，且 K₂ &lt; K₁/β</td><td>稳定共存（两种平衡共存）</td></tr>
+      <tr><td>K₁ &gt; K₂/α，且 K₂ &lt; K₁/β</td><td>物种1取胜，物种2被排除（物种1种间抑制力弱，种内抑制力也弱）</td></tr>
+      <tr><td>K₂ &gt; K₁/β，且 K₁ &lt; K₂/α</td><td>物种2取胜，物种1被排除</td></tr>
+      <tr><td>K₁ &gt; K₂/α，且 K₂ &gt; K₁/β</td><td>不稳定共存（取决于初始密度，两种均有可能取胜）</td></tr>
+      <tr><td>K₁ &lt; K₂/α，且 K₂ &lt; K₁/β</td><td>稳定共存（两者均有各自优势，稳定平衡）</td></tr>
     </table>
   </div>
-
-  <div class="section">
-    <h4>种间关系类型总结</h4>
-    <table class="compare-table">
-      <tr><th>关系类型</th><th>物种1</th><th>物种2</th><th>典型例子</th></tr>
-      <tr><td><strong>竞争</strong></td><td>−</td><td>−</td><td>两种植物争夺光照</td></tr>
-      <tr><td><strong>捕食</strong></td><td>+</td><td>−</td><td>狼与兔</td></tr>
-      <tr><td><strong>食草</strong></td><td>+</td><td>−</td><td>昆虫与植物</td></tr>
+  <div class="sec">
+    <h4>种间关系类型（+/-/0对应）</h4>
+    <table class="ct">
+      <tr><th>类型</th><th>物种1</th><th>物种2</th><th>典型例子</th></tr>
+      <tr><td><strong>竞争</strong></td><td>−</td><td>−</td><td>两种植物争夺光照和矿质元素</td></tr>
+      <tr><td><strong>捕食</strong></td><td>+</td><td>−</td><td>狼与兔，海星与贻贝</td></tr>
       <tr><td><strong>寄生</strong></td><td>+</td><td>−</td><td>寄生虫与宿主</td></tr>
-      <tr><td><strong>互利共生</strong></td><td>+</td><td>+</td><td>固氮菌与豆科植物</td></tr>
+      <tr><td><strong>互利共生</strong></td><td>+</td><td>+</td><td>根瘤菌与豆科植物，地衣（菌+藻）</td></tr>
       <tr><td><strong>偏利共生</strong></td><td>+</td><td>0</td><td>附生植物与大树</td></tr>
-      <tr><td><strong>偏害共生</strong></td><td>−</td><td>0</td><td>他感作用</td></tr>
-      <tr><td><strong>中性</strong></td><td>0</td><td>0</td><td>两种独立生活的物种</td></tr>
+      <tr><td><strong>偏害共生</strong></td><td>−</td><td>0</td><td>他感作用（植物分泌抑制他种物质）</td></tr>
     </table>
   </div>
-  <div class="back-top"><a href="#top">↑ 回到顶部</a></div>
+  <!-- 框图 -->
+  <div class="sec">
+    <h4>📊 种间关系与生态位框图</h4>
+    <div class="mindmap-wrap">
+<svg viewBox="0 0 880 220" xmlns="http://www.w3.org/2000/svg" style="font-family:'PingFang SC',Arial,sans-serif">
+<defs><marker id="a5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#52b788" stroke-width="1.5" stroke-linecap="round"/></marker></defs>
+<!-- 中心 -->
+<rect x="340" y="88" width="200" height="44" rx="8" fill="#1a4731"/>
+<text x="440" y="115" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">种间关系</text>
+<!-- 左竞争 -->
+<rect x="30" y="34" width="150" height="38" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="105" y="52" text-anchor="middle" fill="#fff" font-size="11">竞争（- -）</text>
+<text x="105" y="65" text-anchor="middle" fill="#95d5b2" font-size="10">LV模型/竞争排斥/生态位</text>
+<line x1="180" y1="53" x2="340" y2="103" stroke="#52b788" stroke-width="1" marker-end="url(#a5)" fill="none"/>
+<!-- 左捕食 -->
+<rect x="30" y="96" width="150" height="38" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="105" y="114" text-anchor="middle" fill="#fff" font-size="11">捕食（+ -）</text>
+<text x="105" y="127" text-anchor="middle" fill="#95d5b2" font-size="10">捕食-猎物模型/协同进化</text>
+<line x1="180" y1="115" x2="340" y2="115" stroke="#52b788" stroke-width="1" marker-end="url(#a5)" fill="none"/>
+<!-- 左共生 -->
+<rect x="30" y="158" width="150" height="38" rx="6" fill="#52b788" stroke="#95d5b2" stroke-width="0.5"/>
+<text x="105" y="176" text-anchor="middle" fill="#0d2b1c" font-size="11">共生（+ +/0）</text>
+<text x="105" y="189" text-anchor="middle" fill="#1a4731" font-size="10">互利/偏利/偏害</text>
+<line x1="180" y1="177" x2="340" y2="125" stroke="#52b788" stroke-width="1" marker-end="url(#a5)" fill="none"/>
+<!-- 右生态位 -->
+<rect x="700" y="34" width="150" height="38" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="775" y="52" text-anchor="middle" fill="#fff" font-size="11">生态位理论</text>
+<text x="775" y="65" text-anchor="middle" fill="#95d5b2" font-size="10">基础/实际生态位</text>
+<line x1="700" y1="53" x2="540" y2="103" stroke="#95d5b2" stroke-width="1" marker-end="url(#a5)" fill="none"/>
+<!-- 右竞争排斥 -->
+<rect x="700" y="96" width="150" height="38" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="775" y="114" text-anchor="middle" fill="#fff" font-size="11">竞争排斥原理</text>
+<text x="775" y="127" text-anchor="middle" fill="#95d5b2" font-size="10">生态位相同→不能共存</text>
+<line x1="700" y1="115" x2="540" y2="115" stroke="#95d5b2" stroke-width="1" marker-end="url(#a5)" fill="none"/>
+<!-- 右协同进化 -->
+<rect x="700" y="158" width="150" height="38" rx="6" fill="#52b788" stroke="#95d5b2" stroke-width="0.5"/>
+<text x="775" y="176" text-anchor="middle" fill="#0d2b1c" font-size="11">协同进化</text>
+<text x="775" y="189" text-anchor="middle" fill="#1a4731" font-size="10">红皇后效应</text>
+<line x1="700" y1="177" x2="540" y2="125" stroke="#95d5b2" stroke-width="1" marker-end="url(#a5)" fill="none"/>
+<text x="440" y="205" text-anchor="middle" fill="#3d5240" font-size="11">生态位分化→物种共存；竞争排斥→物种多样性降低</text>
+</svg>
+    </div>
+  </div>
+  <div class="bt"><a href="#top">↑ 顶部</a></div>
 </div>
-
-<!-- ═══════════════════════════════════════════════════ -->
-<!-- PART 3 -->
-<!-- ═══════════════════════════════════════════════════ -->
-<div class="part-header" id="part3">
+<!-- ═══════════════ PART 3 ═══════════════ -->
+<div class="part-hdr" id="p3">
   <span class="part-badge">第三部分</span>
   <h2>群落生态学（Ch 8–10）</h2>
+</div>
+
+<!-- 第三部分总框图 -->
+<div class="mindmap-wrap">
+<svg viewBox="0 0 960 200" xmlns="http://www.w3.org/2000/svg" style="font-family:'PingFang SC',Arial,sans-serif">
+<defs><marker id="a6" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#52b788" stroke-width="1.5" stroke-linecap="round"/></marker></defs>
+<rect x="370" y="78" width="220" height="44" rx="8" fill="#1a4731"/>
+<text x="480" y="105" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">群落生态学</text>
+<rect x="20" y="40" width="155" height="38" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="97" y="58" text-anchor="middle" fill="#fff" font-size="11">群落组成与结构</text>
+<text x="97" y="70" text-anchor="middle" fill="#95d5b2" font-size="10">数量特征·多样性指数</text>
+<line x1="175" y1="59" x2="370" y2="95" stroke="#52b788" stroke-width="1" marker-end="url(#a6)" fill="none"/>
+<rect x="20" y="100" width="155" height="38" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="97" y="118" text-anchor="middle" fill="#fff" font-size="11">影响群落结构的因素</text>
+<text x="97" y="130" text-anchor="middle" fill="#95d5b2" font-size="10">竞争·捕食·干扰·空间异质</text>
+<line x1="175" y1="119" x2="370" y2="108" stroke="#52b788" stroke-width="1" marker-end="url(#a6)" fill="none"/>
+<rect x="20" y="160" width="155" height="38" rx="6" fill="#52b788" stroke="#95d5b2" stroke-width="0.5"/>
+<text x="97" y="178" text-anchor="middle" fill="#0d2b1c" font-size="11">中度干扰假说</text>
+<text x="97" y="190" text-anchor="middle" fill="#1a4731" font-size="10">中等干扰→最高多样性</text>
+<line x1="175" y1="179" x2="370" y2="120" stroke="#52b788" stroke-width="1" marker-end="url(#a6)" fill="none"/>
+<rect x="790" y="30" width="155" height="38" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="867" y="48" text-anchor="middle" fill="#fff" font-size="11">群落动态</text>
+<text x="867" y="60" text-anchor="middle" fill="#95d5b2" font-size="10">季节·波动·演替</text>
+<line x1="790" y1="49" x2="590" y2="95" stroke="#95d5b2" stroke-width="1" marker-end="url(#a6)" fill="none"/>
+<rect x="790" y="84" width="155" height="38" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="867" y="102" text-anchor="middle" fill="#fff" font-size="11">演替类型与学说</text>
+<text x="867" y="114" text-anchor="middle" fill="#95d5b2" font-size="10">3模型·3顶极学说</text>
+<line x1="790" y1="103" x2="590" y2="108" stroke="#95d5b2" stroke-width="1" marker-end="url(#a6)" fill="none"/>
+<rect x="790" y="138" width="155" height="38" rx="6" fill="#52b788" stroke="#95d5b2" stroke-width="0.5"/>
+<text x="867" y="156" text-anchor="middle" fill="#0d2b1c" font-size="11">群落分类与排序</text>
+<text x="867" y="168" text-anchor="middle" fill="#1a4731" font-size="10">9级分类·直接/间接梯度</text>
+<line x1="790" y1="157" x2="590" y2="120" stroke="#95d5b2" stroke-width="1" marker-end="url(#a6)" fill="none"/>
+</svg>
 </div>
 
 <!-- CH8 -->
 <div class="chapter" id="ch8">
   <h3>第八章：群落的组成与结构</h3>
-
-  <div class="section">
-    <h4>核心名词</h4>
-    <div class="term-grid">
-      <div class="term-card">
-        <div class="term-name">生物群落（Biotic community）</div>
-        <div class="term-def">在相同时间聚集在同一地段上的各物种种群的集合，各物种之间存在相互联系与相互作用，并非种群的简单叠加。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">优势种（Dominant species）</div>
-        <div class="term-def">对群落结构和群落环境的形成有明显控制作用的植物种，通常个体数量多、投影盖度大、生物量高、体积较大、生活能力强。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">建群种（Constructive species）</div>
-        <div class="term-def">群落优势层的优势种，是群落的创建者，对群落的形成、结构和环境起决定性作用。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">亚优势种（Subdominant species）</div>
-        <div class="term-def">个体数量与作用次于优势种，但在决定群落性质和控制群落环境方面仍起一定作用的植物种。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">伴生种（Companion species）</div>
-        <div class="term-def">群落的常见种类，与优势种相伴存在，但不起主要作用。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">偶见种/罕见种（Rare species）</div>
-        <div class="term-def">出现频率很低、数量十分稀少的种，可能是偶然引入、入侵或衰退中的残遗种。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">重要值（Importance Value, I.V.）</div>
-        <div class="term-def">某个种在群落中地位和作用的综合数量指标。<br>森林：I.V. = 相对密度 + 相对频度 + 相对优势度（相对基盖度）<br>草原：I.V. = 相对高度 + 相对频度 + 相对盖度</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">生活型（Life form）</div>
-        <div class="term-def">生物对外界环境适应的外部表现形式（趋同适应）。Raunkiaer 按芽的位置分为高位芽、地上芽、地面芽、地下芽和一年生植物五类。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">层片（Synusia）</div>
-        <div class="term-def">由相同生活型或相似生态要求的种组成的机能群落（H. Gams，1918）。是群落的三维生态结构，每个层片占据特定的空间和时间。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">群落交错区（Ecotone）</div>
-        <div class="term-def">两个或多个群落之间的过渡区域（生态过渡带）。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">边缘效应（Edge effect）</div>
-        <div class="term-def">群落交错区内种的数目及一些种的密度增大的趋势。因交错区兼有相邻群落的物种。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">镶嵌性（Mosaic）</div>
-        <div class="term-def">植物个体在水平方向上的分布不均匀，形成了许多小群落（microcoense）。群落水平结构的主要特征。</div>
-      </div>
+  <div class="sec">
+    <h4>群落种类组成（名词解释常考）</h4>
+    <div class="tgrid">
+      <div class="tcard hot"><div class="tn">优势种 / 建群种</div><div class="td">优势种：对群落结构和环境形成有明显控制作用的植物种（个体多、盖度大、生物量高）。<br>建群种：优势层的优势种，是群落的"创建者"。</div></div>
+      <div class="tcard"><div class="tn">亚优势种</div><div class="td">作用次于优势种，但在决定群落性质方面仍起一定作用的植物种。</div></div>
+      <div class="tcard"><div class="tn">伴生种</div><div class="td">群落常见种类，与优势种相伴存在，但不起主要作用。</div></div>
+      <div class="tcard"><div class="tn">偶见种/罕见种</div><div class="td">出现频率很低、数量十分稀少的种，可能是偶然引入或衰退中的残遗种。</div></div>
+      <div class="tcard hot"><div class="tn">重要值（Importance Value）</div><div class="td">综合数量指标。<br><strong>森林：</strong>I.V. = 相对密度 + 相对频度 + 相对优势度（相对基盖度）<br><strong>草原：</strong>I.V. = 相对高度 + 相对频度 + 相对盖度</div></div>
+      <div class="tcard hot"><div class="tn">生活型（Life form）</div><div class="td">生物对外界环境适应的外部表现形式（趋同适应）。Raunkiaer按芽的位置分5类：高位芽、地上芽、地面芽、地下芽、一年生植物。</div></div>
+      <div class="tcard"><div class="tn">层片（Synusia）</div><div class="td">由相同生活型或相似生态要求的种组成的机能群落（H. Gams，1918）。是群落的三维生态结构。</div></div>
+      <div class="tcard hot"><div class="tn">群落交错区 / 边缘效应</div><div class="td">群落交错区：两个或多个群落之间的过渡区域（生态过渡带）。<br>边缘效应：交错区内种的数目及密度增大的趋势。</div></div>
+      <div class="tcard"><div class="tn">镶嵌性（Mosaic）</div><div class="td">植物在水平方向分布不均匀，形成许多小群落（microcoense）。群落水平结构的主要特征。</div></div>
     </div>
   </div>
-
-  <div class="section">
-    <h4>生物多样性指数</h4>
-    <table class="compare-table">
+  <div class="sec">
+    <h4>生物多样性指数（必考计算题）</h4>
+    <table class="ct">
       <tr><th>指数</th><th>公式</th><th>含义</th></tr>
-      <tr><td><strong>辛普森多样性指数（D）</strong></td><td>D = 1 − Σ(Nᵢ/N)²</td><td>随机取样两个个体属于不同种的概率；值越大，多样性越高</td></tr>
-      <tr><td><strong>香农-威纳指数（H）</strong></td><td>H = −Σ Pᵢ log₂ Pᵢ</td><td>描述种的个体出现的紊乱和不确定性；不确定性越高，多样性越高</td></tr>
+      <tr><td><strong>辛普森多样性指数（D）</strong></td><td>D = 1 − Σ(Nᵢ/N)²</td><td>随机取样两个个体属于不同种的概率，越大多样性越高</td></tr>
+      <tr><td><strong>香农-威纳指数（H）</strong></td><td>H = −Σ Pᵢ log₂ Pᵢ</td><td>描述种的个体出现的紊乱和不确定性，不确定性越高多样性越高</td></tr>
     </table>
-    <div class="key-box">
-      <div class="key-title">⭐ α、β、γ 多样性</div>
-      <ul class="content-list">
-        <li><strong>α-多样性：</strong>在栖息地或群落中的物种多样性（局域尺度）</li>
-        <li><strong>β-多样性：</strong>物种组成沿着某个梯度从一个群落到另一个群落的变化率（反映生境变化程度）</li>
-        <li><strong>γ-多样性：</strong>一个地区内穿过一系列群落的总体物种多样性（广域尺度）</li>
-      </ul>
+    <div class="kbox"><div class="kt">⭐ α/β/γ多样性</div><ul class="cl">
+      <li><strong>α-多样性：</strong>在栖息地或群落中的物种多样性（局域尺度）</li>
+      <li><strong>β-多样性：</strong>物种组成沿环境梯度从一个群落到另一个群落的变化率</li>
+      <li><strong>γ-多样性：</strong>一个地区内穿过一系列群落的总体物种多样性（广域尺度）</li>
+    </ul></div>
+  </div>
+  <div class="sec">
+    <h4>中度干扰假说（论述题重点）</h4>
+    <div class="kbox"><div class="kt">⭐ Intermediate Disturbance Hypothesis（Connell提出）</div><ul class="cl">
+      <li><strong>核心：</strong>中等程度的干扰能维持物种的<strong>最高多样性</strong></li>
+      <li><strong>低干扰：</strong>演替发展到顶级期，竞争排斥导致物种多样性降低</li>
+      <li><strong>高干扰：</strong>先锋种不能发展到演替中期，只有少数耐干扰物种，多样性低</li>
+      <li><strong>中等干扰：</strong>允许更多物种入侵定居，先锋种和中期物种共存，多样性最高</li>
+      <li><strong>首次提出：</strong>在研究潮间带群落时提出（潮间带石头上的物种数随干扰强度呈单峰曲线）</li>
+    </ul></div>
+  </div>
+  <!-- 群落结构框图 -->
+  <div class="sec">
+    <h4>📊 群落组成与结构框图</h4>
+    <div class="mindmap-wrap">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg" style="font-family:'PingFang SC',Arial,sans-serif">
+<defs><marker id="a7" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#52b788" stroke-width="1.5" stroke-linecap="round"/></marker></defs>
+<!-- 中心 -->
+<rect x="350" y="100" width="220" height="44" rx="8" fill="#1a4731"/>
+<text x="460" y="127" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">生物群落</text>
+<!-- 左侧：组成数量结构 -->
+<rect x="20" y="50" width="165" height="40" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="102" y="68" text-anchor="middle" fill="#fff" font-size="11">种类组成</text>
+<text x="102" y="82" text-anchor="middle" fill="#95d5b2" font-size="10">优势/建群/亚优/伴生/偶见</text>
+<line x1="185" y1="70" x2="350" y2="115" stroke="#52b788" stroke-width="1" marker-end="url(#a7)" fill="none"/>
+<rect x="20" y="110" width="165" height="40" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="102" y="128" text-anchor="middle" fill="#fff" font-size="11">数量特征</text>
+<text x="102" y="142" text-anchor="middle" fill="#95d5b2" font-size="10">密度·盖度·频度·重要值</text>
+<line x1="185" y1="130" x2="350" y2="125" stroke="#52b788" stroke-width="1" marker-end="url(#a7)" fill="none"/>
+<rect x="20" y="170" width="165" height="40" rx="6" fill="#52b788" stroke="#95d5b2" stroke-width="0.5"/>
+<text x="102" y="188" text-anchor="middle" fill="#0d2b1c" font-size="11">生物多样性</text>
+<text x="102" y="202" text-anchor="middle" fill="#1a4731" font-size="10">Simpson/Shannon-Weiner</text>
+<line x1="185" y1="190" x2="350" y2="135" stroke="#52b788" stroke-width="1" marker-end="url(#a7)" fill="none"/>
+<!-- 右侧：空间时间结构 -->
+<rect x="735" y="30" width="165" height="40" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="817" y="48" text-anchor="middle" fill="#fff" font-size="11">垂直结构</text>
+<text x="817" y="62" text-anchor="middle" fill="#95d5b2" font-size="10">地上/地下成层 生活型/层片</text>
+<line x1="735" y1="50" x2="570" y2="115" stroke="#95d5b2" stroke-width="1" marker-end="url(#a7)" fill="none"/>
+<rect x="735" y="88" width="165" height="40" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="817" y="106" text-anchor="middle" fill="#fff" font-size="11">水平结构</text>
+<text x="817" y="120" text-anchor="middle" fill="#95d5b2" font-size="10">镶嵌性/小群落</text>
+<line x1="735" y1="108" x2="570" y2="122" stroke="#95d5b2" stroke-width="1" marker-end="url(#a7)" fill="none"/>
+<rect x="735" y="146" width="165" height="40" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="817" y="164" text-anchor="middle" fill="#fff" font-size="11">时间结构</text>
+<text x="817" y="178" text-anchor="middle" fill="#95d5b2" font-size="10">季相变化/时间层片</text>
+<line x1="735" y1="166" x2="570" y2="130" stroke="#95d5b2" stroke-width="1" marker-end="url(#a7)" fill="none"/>
+<rect x="735" y="204" width="165" height="40" rx="6" fill="#52b788" stroke="#95d5b2" stroke-width="0.5"/>
+<text x="817" y="222" text-anchor="middle" fill="#0d2b1c" font-size="11">群落交错区</text>
+<text x="817" y="236" text-anchor="middle" fill="#1a4731" font-size="10">边缘效应/生态过渡带</text>
+<line x1="735" y1="224" x2="570" y2="138" stroke="#95d5b2" stroke-width="1" marker-end="url(#a7)" fill="none"/>
+</svg>
     </div>
   </div>
-
-  <div class="section">
-    <h4>物种多样性空间变化规律及其解释学说</h4>
-    <ul class="content-list">
-      <li><strong>规律：</strong>多样性一般随纬度增高而降低；随海拔增高而降低；在海洋或淡水中随深度增加而降低</li>
-      <li><strong>进化时间学说：</strong>热带存在时间长，积累物种多</li>
-      <li><strong>生态时间学说：</strong>物种扩展到新地区需要时间</li>
-      <li><strong>空间异质性学说：</strong>热带环境空间异质性高→更多生态位→更多物种</li>
-      <li><strong>气候稳定学说：</strong>热带气候稳定，有利于更多物种分化</li>
-      <li><strong>竞争学说：</strong>热带竞争激烈→促进生态位分化→物种增多</li>
-      <li><strong>捕食学说：</strong>热带捕食者丰富→降低竞争者的种群密度→允许更多物种共存</li>
-      <li><strong>生产力学说：</strong>热带生产力高→支持更多物种</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h4>影响群落结构的因素</h4>
-    <table class="compare-table">
-      <tr><th>因素</th><th>机制</th><th>关键概念</th></tr>
-      <tr><td><strong>竞争</strong></td><td>生态位分化→促进物种共存，同资源种团内竞争激烈</td><td>生态位、同资源种团、竞争排斥</td></tr>
-      <tr><td><strong>捕食</strong></td><td>选择性捕食者影响优势种，维持或降低多样性</td><td>关键种（如海星实验）</td></tr>
-      <tr><td><strong>中度干扰</strong></td><td>中等程度干扰能维持最高多样性</td><td>中度干扰假说（Connell）</td></tr>
-      <tr><td><strong>空间异质性</strong></td><td>异质性越高→更多小生境→更多物种共存</td><td>生境异质性</td></tr>
-      <tr><td><strong>岛屿效应</strong></td><td>物种数随面积增大而增多：S = cAᶻ</td><td>MacArthur平衡说</td></tr>
-    </table>
-  </div>
-
-  <div class="section">
-    <h4>对群落性质的两种对立观点</h4>
-    <table class="compare-table">
-      <tr><th>学派</th><th>代表人物</th><th>核心观点</th><th>特点</th></tr>
-      <tr><td><strong>机体论学派</strong></td><td>Clements</td><td>植物群落比拟为一个生物有机体，有诞生、生长、成熟和死亡的发育阶段</td><td>封闭群落，有明确边界</td></tr>
-      <tr><td><strong>个体论学派</strong></td><td>Gleason</td><td>群落没有明显边界，环境的连续变化使群落是连续的，群落只是研究方便的抽象概念</td><td>开放群落，无明确边界</td></tr>
-      <tr><td><strong>中间派</strong></td><td>（综合）</td><td>两种观点均有适用范围，自然群落处于两极之间的连续谱上</td><td>折中观点</td></tr>
-    </table>
-  </div>
-
-  <div class="section">
-    <h4>中度干扰假说（重点论述题）</h4>
-    <div class="key-box">
-      <div class="key-title">⭐ 中度干扰假说（Intermediate Disturbance Hypothesis）</div>
-      <ul class="content-list">
-        <li><strong>提出者：</strong>Connell 等，在研究潮间带群落时首次提出</li>
-        <li><strong>核心观点：</strong>中等程度的干扰能维持物种的最高多样性</li>
-        <li><strong>低干扰时：</strong>演替过程发展到顶级期，竞争排斥导致物种多样性降低</li>
-        <li><strong>高干扰时：</strong>先锋种不能发展到演替中期，只有少数耐干扰物种存活，多样性低</li>
-        <li><strong>中等干扰时：</strong>允许更多物种入侵定居，既有先锋种又有演替中期物种，多样性最高</li>
-      </ul>
-    </div>
-  </div>
-  <div class="back-top"><a href="#top">↑ 回到顶部</a></div>
+  <div class="bt"><a href="#top">↑ 顶部</a></div>
 </div>
 
 <!-- CH9 -->
 <div class="chapter" id="ch9">
   <h3>第九章：群落的动态</h3>
-
-  <div class="section">
+  <div class="sec">
     <h4>核心名词</h4>
-    <div class="term-grid">
-      <div class="term-card">
-        <div class="term-name">群落演替（Succession）</div>
-        <div class="term-def">在同一地点，群落由低级到高级、由简单到复杂的发展变化过程，是群落的代替现象。一般最终形成顶级群落（climax）。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">原生演替（Primary succession）</div>
-        <div class="term-def">从来没有植物覆盖的地面（原生裸地）上发生的演替，起始条件无土壤，速度极慢。如冰川退缩地、新火山岩上的演替。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">次生演替（Secondary succession）</div>
-        <div class="term-def">原有植被被破坏后（次生裸地）的演替，土壤条件基本保留（有种子或繁殖体残留），速度较快。如森林砍伐、火烧后的演替。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">顶级群落（Climax community）</div>
-        <div class="term-def">演替的最终稳定阶段，与当地气候条件相适应的群落。在没有外来干扰时，顶级群落能长期保持相对稳定。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">季相（Aspect）</div>
-        <div class="term-def">群落在不同季节的外貌。群落季节性的外貌变化称为季相变化，是群落时间结构（内部动态）的主要特征。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">断层（Gap）</div>
-        <div class="term-def">群落中由干扰造成的空白地段。断层的形成和填充是维持群落多样性的重要机制。</div>
-      </div>
+    <div class="tgrid">
+      <div class="tcard hot"><div class="tn">群落演替（Succession）</div><div class="td">在同一地点，群落由低级到高级、由简单到复杂的发展变化过程（群落代替现象），一般最终形成顶级群落。</div></div>
+      <div class="tcard hot"><div class="tn">原生演替（Primary succession）</div><div class="td">从无植物覆盖的原生裸地（无土壤条件）开始的演替，速度极慢。如冰川退缩地、新火山岩。</div></div>
+      <div class="tcard hot"><div class="tn">次生演替（Secondary succession）</div><div class="td">原有植被被破坏后（次生裸地，保留土壤和繁殖体）的演替，速度较快。如森林砍伐、火烧后。</div></div>
+      <div class="tcard hot"><div class="tn">顶级群落（Climax community）</div><div class="td">演替的最终稳定阶段，与当地气候相适应的群落。无外来干扰时能长期维持相对稳定。</div></div>
+      <div class="tcard"><div class="tn">季相（Aspect）</div><div class="td">群落在不同季节的外貌，是群落时间结构（内部动态）的主要特征。</div></div>
     </div>
   </div>
-
-  <div class="section">
-    <h4>演替过程的理论模型对比</h4>
-    <table class="compare-table">
+  <div class="sec">
+    <h4>演替过程3种理论模型（必考对比）</h4>
+    <table class="ct">
       <tr><th>模型</th><th>核心机制</th><th>关键特点</th></tr>
-      <tr><td><strong>促进模型</strong></td><td>先来物种改变环境，使之有利于后来物种而不利于自身→促进下一阶段物种繁荣</td><td>类似经典演替观；演替具有方向性和可预测性</td></tr>
-      <tr><td><strong>抑制模型</strong></td><td>每个种都试图抑制新来的定居者；先到者占优势；r-对策种被K-对策种取代</td><td>演替具有个体性，取决于最初到达的物种</td></tr>
-      <tr><td><strong>忍耐模型</strong></td><td>先锋种不重要，任何种都可开始；植物替代伴随资源递减，较能忍受有限资源的物种将取代其他种</td><td>演替取决于竞争忍耐能力；资源竞争驱动</td></tr>
+      <tr><td><strong>促进模型（Facilitation）</strong></td><td>先来物种改变环境，使之有利于后来物种、不利于自身→促进下一阶段物种繁荣</td><td>类似经典演替观；演替有方向性和可预测性</td></tr>
+      <tr><td><strong>抑制模型（Inhibition）</strong></td><td>每个种都试图抑制新来定居者；先到者占优势；r-对策种被K-对策种取代</td><td>演替具个体性，取决于最初到达的物种；类似个体论</td></tr>
+      <tr><td><strong>忍耐模型（Tolerance）</strong></td><td>先锋种不重要，任何种都可开始；替代伴随资源递减，较能忍受有限资源的物种取代其他种</td><td>演替取决于竞争忍耐能力；资源竞争驱动</td></tr>
     </table>
   </div>
-
-  <div class="section">
-    <h4>演替顶级学说对比</h4>
-    <table class="compare-table">
-      <tr><th>学说</th><th>核心假设</th><th>含义</th></tr>
-      <tr><td><strong>单元顶极学说</strong></td><td>一个地区只允许有一个气候顶极</td><td>所有演替最终都向同一顶极群落发展，由气候决定</td></tr>
-      <tr><td><strong>多元顶极学说</strong></td><td>允许有几个顶极群落存在</td><td>不同土壤、地形条件可形成不同顶极群落</td></tr>
-      <tr><td><strong>顶极-格局假说</strong></td><td>各顶极群落类型连续，沿环境梯度逐渐变化</td><td>顶极群落形成连续的镶嵌格局，难以截然划分</td></tr>
+  <div class="sec">
+    <h4>演替顶极3大学说（必考对比）</h4>
+    <table class="ct">
+      <tr><th>学说</th><th>核心假设</th><th>结论</th></tr>
+      <tr><td><strong>单元顶极学说</strong></td><td>一个地区只允许有一个气候顶极</td><td>所有演替都向同一顶极群落发展，由气候决定</td></tr>
+      <tr><td><strong>多元顶极学说</strong></td><td>允许有几个顶极群落存在</td><td>不同土壤、地形可形成不同顶极群落</td></tr>
+      <tr><td><strong>顶极-格局假说</strong></td><td>各顶极群落类型连续，沿环境梯度逐渐变化</td><td>顶极群落形成连续镶嵌格局，难以截然划分</td></tr>
     </table>
   </div>
-
-  <div class="section">
-    <h4>水生演替系列各阶段</h4>
-    <table class="compare-table">
-      <tr><th>演替阶段</th><th>主要植物</th><th>湖底变化</th></tr>
-      <tr><td>自由漂浮植物阶段</td><td>浮萍、满江红等藻类</td><td>死亡残体增加有机质；湖底抬升开始</td></tr>
-      <tr><td>沉水植物阶段</td><td>轮藻属（5–7m）；高等藻类（2–4m）</td><td>有机质积累加快，湖底抬升加快</td></tr>
-      <tr><td>浮叶根生植物阶段</td><td>莲、睡莲</td><td>湖底进一步抬升，水下光照改变</td></tr>
-      <tr><td>直立水生阶段</td><td>芦苇、香蒲</td><td>根茎茂密，湖底迅速抬高，形成浮岛</td></tr>
-      <tr><td>湿生草本植物阶段</td><td>沼泽植物→被旱生草类取代</td><td>部分地面抬升出湖面，水分丧失</td></tr>
-      <tr><td>木本植物阶段</td><td>灌木→乔木形成森林</td><td>湿生生境→中生生境</td></tr>
+  <div class="sec">
+    <h4>水生演替系列6阶段</h4>
+    <table class="ct">
+      <tr><th>阶段</th><th>主要植物</th><th>湖底变化</th></tr>
+      <tr><td>①自由漂浮植物</td><td>浮萍、满江红等</td><td>有机质积累，湖底开始抬升</td></tr>
+      <tr><td>②沉水植物</td><td>轮藻（5–7m）、高等藻类（2–4m）</td><td>有机质积累加快</td></tr>
+      <tr><td>③浮叶根生植物</td><td>莲、睡莲</td><td>湖底进一步抬升，水下光照改变</td></tr>
+      <tr><td>④直立水生</td><td>芦苇、香蒲</td><td>根茎茂密，迅速抬高，形成浮岛</td></tr>
+      <tr><td>⑤湿生草本</td><td>沼泽植物→旱生草类取代</td><td>部分抬升出湖面，水分丧失</td></tr>
+      <tr><td>⑥木本植物</td><td>灌木→乔木→森林</td><td>湿生生境→中生生境</td></tr>
     </table>
   </div>
-  <div class="back-top"><a href="#top">↑ 回到顶部</a></div>
+  <!-- 演替框图 -->
+  <div class="sec">
+    <h4>📊 群落演替知识框图</h4>
+    <div class="mindmap-wrap">
+<svg viewBox="0 0 920 230" xmlns="http://www.w3.org/2000/svg" style="font-family:'PingFang SC',Arial,sans-serif">
+<defs><marker id="a8" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#52b788" stroke-width="1.5" stroke-linecap="round"/></marker></defs>
+<rect x="355" y="88" width="210" height="44" rx="8" fill="#1a4731"/>
+<text x="460" y="115" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">群落演替</text>
+<!-- 左上 -->
+<rect x="20" y="30" width="160" height="40" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="100" y="48" text-anchor="middle" fill="#fff" font-size="11">演替类型</text>
+<text x="100" y="62" text-anchor="middle" fill="#95d5b2" font-size="10">原生（无土壤）/ 次生（有土壤）</text>
+<line x1="180" y1="50" x2="355" y2="105" stroke="#52b788" stroke-width="1" marker-end="url(#a8)" fill="none"/>
+<!-- 左中 -->
+<rect x="20" y="96" width="160" height="40" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="100" y="114" text-anchor="middle" fill="#fff" font-size="11">演替系列</text>
+<text x="100" y="128" text-anchor="middle" fill="#95d5b2" font-size="10">水生系列 / 旱生系列</text>
+<line x1="180" y1="116" x2="355" y2="115" stroke="#52b788" stroke-width="1" marker-end="url(#a8)" fill="none"/>
+<!-- 左下 -->
+<rect x="20" y="162" width="160" height="40" rx="6" fill="#52b788" stroke="#95d5b2" stroke-width="0.5"/>
+<text x="100" y="180" text-anchor="middle" fill="#0d2b1c" font-size="11">演替控制因素</text>
+<text x="100" y="193" text-anchor="middle" fill="#1a4731" font-size="10">传播·定居·竞争·环境变化</text>
+<line x1="180" y1="182" x2="355" y2="125" stroke="#52b788" stroke-width="1" marker-end="url(#a8)" fill="none"/>
+<!-- 右上：3模型 -->
+<rect x="740" y="20" width="160" height="50" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="820" y="38" text-anchor="middle" fill="#fff" font-size="11">演替过程3模型</text>
+<text x="820" y="52" text-anchor="middle" fill="#95d5b2" font-size="10">促进 / 抑制 / 忍耐</text>
+<text x="820" y="64" text-anchor="middle" fill="#d8f3dc" font-size="9">（←r/K对策/资源比率理论）</text>
+<line x1="740" y1="45" x2="565" y2="105" stroke="#95d5b2" stroke-width="1" marker-end="url(#a8)" fill="none"/>
+<!-- 右中：3顶极 -->
+<rect x="740" y="90" width="160" height="50" rx="6" fill="#e9c46a" stroke="#b5830a" stroke-width="0.5"/>
+<text x="820" y="108" text-anchor="middle" fill="#3a2800" font-size="11">演替顶极3学说</text>
+<text x="820" y="122" text-anchor="middle" fill="#5a4000" font-size="10">单元·多元·顶极格局假说</text>
+<text x="820" y="134" text-anchor="middle" fill="#7a6000" font-size="9">（对应显域/隐域植被）</text>
+<line x1="740" y1="115" x2="565" y2="118" stroke="#b5830a" stroke-width="1" marker-end="url(#a8)" fill="none"/>
+<!-- 右下：方向 -->
+<rect x="740" y="162" width="160" height="40" rx="6" fill="#52b788" stroke="#95d5b2" stroke-width="0.5"/>
+<text x="820" y="180" text-anchor="middle" fill="#0d2b1c" font-size="11">演替方向</text>
+<text x="820" y="193" text-anchor="middle" fill="#1a4731" font-size="10">进展演替 / 逆行演替</text>
+<line x1="740" y1="182" x2="565" y2="130" stroke="#95d5b2" stroke-width="1" marker-end="url(#a8)" fill="none"/>
+</svg>
+    </div>
+  </div>
+  <div class="bt"><a href="#top">↑ 顶部</a></div>
 </div>
 
 <!-- CH10 -->
 <div class="chapter" id="ch10">
   <h3>第十章：群落的分类与排序</h3>
-
-  <div class="section">
-    <h4>核心名词</h4>
-    <div class="term-grid">
-      <div class="term-card">
-        <div class="term-name">群落分类</div>
-        <div class="term-def">将群落按其属性数据所反映的相似关系分成组，使组内相似、组间相异。理论基础是机体论（群落是间断可分的）。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">群落排序</div>
-        <div class="term-def">按照相似度来排定各样地的位序，揭示群落的连续性。理论基础是个体论（群落是连续的）。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">群丛（Association）</div>
-        <div class="term-def">群落分类的基本单位，相当于物种分类的"种"。命名采用联名法，各层优势种用"-"相连，共优种用"+"连接。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">直接梯度分析（Direct gradient analysis）</div>
-        <div class="term-def">按照已知的环境梯度（如海拔、土壤水分）来排列植物群落，研究物种沿环境梯度的分布格局。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">间接梯度分析（Indirect gradient analysis）</div>
-        <div class="term-def">不直接测量环境因素，而是根据物种组成的相似性来排列样地，如主成分分析（PCA）、极点排序等。</div>
-      </div>
-    </div>
+  <div class="sec">
+    <h4>分类 vs 排序（必考对比）</h4>
+    <table class="ct">
+      <tr><th>维度</th><th>群落分类</th><th>群落排序</th></tr>
+      <tr><td>定义</td><td>将群落按相似关系分组，组内相似、组间相异</td><td>按照相似度排定各样地的位序</td></tr>
+      <tr><td>理论依据</td><td>机体论（群落是间断可分的）</td><td>个体论（群落是连续的，无明确边界）</td></tr>
+      <tr><td>揭示内容</td><td>群落的间断性</td><td>群落的连续性</td></tr>
+      <tr><td>方法</td><td>人为/自然分类（法瑞学派、英美学派）</td><td>直接梯度分析（Whittaker法）；间接梯度分析（PCA主成分分析）</td></tr>
+    </table>
   </div>
-
-  <div class="section">
-    <h4>植物群落分类体系（9个等级）</h4>
-    <ul class="content-list">
-      <li>植被型组（如草地）→ 植被型（如温带草原）→ 植被亚型（如典型草原）</li>
-      <li>群系组 → 群系（如羊草草原）→ 亚群系</li>
-      <li>群丛组 → <strong>群丛（基本单位）</strong> → 亚群丛</li>
+  <div class="sec">
+    <h4>植物群落9级分类单位</h4>
+    <ul class="cl">
+      <li>植被型组 → 植被型 → 植被亚型</li>
+      <li>群系组 → 群系 → 亚群系</li>
+      <li>群丛组 → <strong>群丛（基本单位，相当于"种"）</strong> → 亚群丛</li>
     </ul>
+    <div class="kbox"><div class="kt">⭐ 群丛命名规则</div><ul class="cl">
+      <li>采用联名法，各层优势种/建群种按顺序排列，不同层间用"<strong>-</strong>"连接</li>
+      <li>同一层共优种用"<strong>+</strong>"连接</li>
+      <li>前面冠以Ass.（Association缩写）</li>
+    </ul></div>
   </div>
-  <div class="back-top"><a href="#top">↑ 回到顶部</a></div>
+  <div class="bt"><a href="#top">↑ 顶部</a></div>
 </div>
-
-<!-- ═══════════════════════════════════════════════════ -->
-<!-- PART 4 -->
-<!-- ═══════════════════════════════════════════════════ -->
-<div class="part-header" id="part4">
+<!-- ═══════════════ PART 4 ═══════════════ -->
+<div class="part-hdr" id="p4">
   <span class="part-badge">第四部分</span>
   <h2>生态系统生态学（Ch 11–14）</h2>
+</div>
+
+<!-- 第四部分总框图 -->
+<div class="mindmap-wrap">
+<svg viewBox="0 0 960 220" xmlns="http://www.w3.org/2000/svg" style="font-family:'PingFang SC',Arial,sans-serif">
+<defs><marker id="a9" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#52b788" stroke-width="1.5" stroke-linecap="round"/></marker></defs>
+<rect x="350" y="88" width="260" height="44" rx="8" fill="#1a4731"/>
+<text x="480" y="115" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">生态系统生态学</text>
+<rect x="10" y="40" width="165" height="38" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="92" y="58" text-anchor="middle" fill="#fff" font-size="11">组成与结构</text>
+<text x="92" y="70" text-anchor="middle" fill="#95d5b2" font-size="10">生产者/消费者/分解者</text>
+<line x1="175" y1="59" x2="350" y2="103" stroke="#52b788" stroke-width="1" marker-end="url(#a9)" fill="none"/>
+<rect x="10" y="100" width="165" height="38" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="92" y="118" text-anchor="middle" fill="#fff" font-size="11">营养结构</text>
+<text x="92" y="130" text-anchor="middle" fill="#95d5b2" font-size="10">食物链/网·营养级·金字塔</text>
+<line x1="175" y1="119" x2="350" y2="112" stroke="#52b788" stroke-width="1" marker-end="url(#a9)" fill="none"/>
+<rect x="10" y="160" width="165" height="38" rx="6" fill="#52b788" stroke="#95d5b2" stroke-width="0.5"/>
+<text x="92" y="178" text-anchor="middle" fill="#0d2b1c" font-size="11">能量流动</text>
+<text x="92" y="190" text-anchor="middle" fill="#1a4731" font-size="10">GP/NP·林德曼效率10%</text>
+<line x1="175" y1="179" x2="350" y2="125" stroke="#52b788" stroke-width="1" marker-end="url(#a9)" fill="none"/>
+<rect x="785" y="32" width="165" height="38" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="867" y="50" text-anchor="middle" fill="#fff" font-size="11">物质循环</text>
+<text x="867" y="62" text-anchor="middle" fill="#95d5b2" font-size="10">气体型/沉积型 水碳氮磷硫</text>
+<line x1="785" y1="51" x2="610" y2="103" stroke="#95d5b2" stroke-width="1" marker-end="url(#a9)" fill="none"/>
+<rect x="785" y="90" width="165" height="38" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="867" y="108" text-anchor="middle" fill="#fff" font-size="11">反馈调节</text>
+<text x="867" y="120" text-anchor="middle" fill="#95d5b2" font-size="10">负反馈→生态平衡</text>
+<line x1="785" y1="109" x2="610" y2="115" stroke="#95d5b2" stroke-width="1" marker-end="url(#a9)" fill="none"/>
+<rect x="785" y="148" width="165" height="38" rx="6" fill="#52b788" stroke="#95d5b2" stroke-width="0.5"/>
+<text x="867" y="166" text-anchor="middle" fill="#0d2b1c" font-size="11">全球分布</text>
+<text x="867" y="178" text-anchor="middle" fill="#1a4731" font-size="10">纬度/经度/垂直/高原地带性</text>
+<line x1="785" y1="167" x2="610" y2="125" stroke="#95d5b2" stroke-width="1" marker-end="url(#a9)" fill="none"/>
+</svg>
 </div>
 
 <!-- CH11 -->
 <div class="chapter" id="ch11">
   <h3>第十一章：生态系统的一般特征</h3>
-
-  <div class="section">
+  <div class="sec">
     <h4>核心名词</h4>
-    <div class="term-grid">
-      <div class="term-card">
-        <div class="term-name">生态系统（Ecosystem）</div>
-        <div class="term-def">生物群落与其非生物环境相互作用所形成的功能单元。由非生物环境、生产者、消费者和分解者四个基本成分组成。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">生产者（Producers）</div>
-        <div class="term-def">能以简单无机物制造食物的自养生物，包括绿色植物、蓝绿藻和光合细菌。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">消费者（Consumers）</div>
-        <div class="term-def">以其他生物为食的异养动物，包括食草动物（初级消费者）、食肉动物（次级消费者）和顶级食肉动物。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">分解者（Decomposers）</div>
-        <div class="term-def">把动植物体的复杂有机物分解为生产者能重新利用的简单化合物，并释放能量的异养生物。主要是细菌和真菌，也包括某些原生动物和大型腐食性动物。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">食物链（Food chain）</div>
-        <div class="term-def">各种生物按其取食和被食的关系排列的链状顺序。分捕食食物链、碎屑食物链和寄生食物链三类。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">食物网（Food web）</div>
-        <div class="term-def">生态系统中食物链彼此交错连接形成的网状结构，更真实地反映了生态系统中生物间的营养关系。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">营养级（Trophic level）</div>
-        <div class="term-def">处于食物链某一环节上所有生物种的总和。绿色植物为第一营养级，食草动物为第二营养级，以此类推。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">生态金字塔（Ecological pyramid）</div>
-        <div class="term-def">各营养级之间的数量关系，可用生物量、能量和个体数量表示。一般从底层到顶层依次减少，呈金字塔形。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">生物放大作用（Biological magnification）</div>
-        <div class="term-def">某些有毒物质沿食物链向上传递，浓度逐营养级增大的现象，如DDT等持久性有机污染物。</div>
-      </div>
+    <div class="tgrid">
+      <div class="tcard hot"><div class="tn">生态系统（Ecosystem）</div><div class="td">生物群落与其非生物环境相互作用所形成的功能单元。由<strong>非生物环境、生产者、消费者、分解者</strong>四个基本成分组成。</div></div>
+      <div class="tcard hot"><div class="tn">食物链（Food chain）</div><div class="td">各种生物按取食和被食关系排列的链状顺序。分三类：①捕食食物链；②碎屑食物链；③寄生食物链。</div></div>
+      <div class="tcard hot"><div class="tn">营养级（Trophic level）</div><div class="td">处于食物链某一环节上所有生物种的总和。绿色植物为第一营养级，食草动物为第二营养级，以此类推。</div></div>
+      <div class="tcard hot"><div class="tn">生态金字塔（Ecological pyramid）</div><div class="td">各营养级之间的数量关系，可用生物量、能量和个体数量表示。</div></div>
+      <div class="tcard"><div class="tn">生物放大作用</div><div class="td">有毒物质（如DDT）沿食物链向上传递，浓度逐营养级增大的现象。</div></div>
     </div>
   </div>
-
-  <div class="section">
-    <h4>三种生态金字塔的特征对比</h4>
-    <table class="compare-table">
-      <tr><th>类型</th><th>单位</th><th>是否总是正金字塔形</th><th>说明</th></tr>
-      <tr><td><strong>能量金字塔</strong></td><td>J/(m²·a)</td><td>✅ 总是正金字塔形</td><td>能量传递遵循热力学定律，不可逆，逐级减少</td></tr>
-      <tr><td><strong>生物量金字塔</strong></td><td>g/m²</td><td>⚠️ 通常是，偶有倒置</td><td>海洋中浮游植物生物量可能小于浮游动物</td></tr>
-      <tr><td><strong>数量金字塔</strong></td><td>个体数目</td><td>❌ 可以倒置</td><td>一棵大树可支持数千昆虫</td></tr>
+  <div class="sec">
+    <h4>三种生态金字塔对比（必考）</h4>
+    <table class="ct">
+      <tr><th>类型</th><th>单位</th><th>是否总是正金字塔</th><th>关键说明</th></tr>
+      <tr><td><strong>能量金字塔</strong></td><td>J/(m²·a)</td><td>✅ <strong>总是正金字塔</strong></td><td>能量传递遵循热力学定律（不可逆），逐营养级减少约90%</td></tr>
+      <tr><td><strong>生物量金字塔</strong></td><td>g/m²</td><td>⚠️ 通常是，偶有倒置</td><td>海洋中浮游植物生物量可能小于浮游动物（周转率不同）</td></tr>
+      <tr><td><strong>数量金字塔</strong></td><td>个体数目</td><td>❌ 可以倒置</td><td>一棵大树可支持数千只昆虫（数量倒置）</td></tr>
     </table>
+    <div class="kbox"><div class="kt">⭐ 为什么能量金字塔总是正三角形？</div><ul class="cl">
+      <li>热力学第二定律：能量传递时不可避免地有一部分以热能形式散失（约90%）</li>
+      <li>林德曼效率约10%，每升高一个营养级，能量减少约90%</li>
+      <li>因此能量金字塔必然是从底部到顶部逐渐缩小的正三角形</li>
+    </ul></div>
   </div>
-
-  <div class="section">
-    <h4>反馈调节与生态平衡</h4>
-    <ul class="content-list">
-      <li><strong>负反馈（Negative feedback）：</strong>抑制和减弱最初发生变化的趋势，使系统恢复到原状态，是维持生态系统平衡的基础机制</li>
-      <li><strong>正反馈（Positive feedback）：</strong>加速系统偏离平衡，若正反馈不受控制则导致系统崩溃</li>
-      <li><strong>生态平衡：</strong>生态系统在一定时间内，结构和功能保持相对稳定状态，即负反馈机制在起作用</li>
-    </ul>
-  </div>
-  <div class="back-top"><a href="#top">↑ 回到顶部</a></div>
+  <div class="bt"><a href="#top">↑ 顶部</a></div>
 </div>
 
 <!-- CH12 -->
 <div class="chapter" id="ch12">
   <h3>第十二章：生态系统中的能量流动</h3>
-
-  <div class="section">
-    <h4>核心名词</h4>
-    <div class="term-grid">
-      <div class="term-card">
-        <div class="term-name">总初级生产量（GP）</div>
-        <div class="term-def">植物在单位时间单位面积通过光合作用固定的总能量（有机物总量）。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">净初级生产量（NP）</div>
-        <div class="term-def">总初级生产量减去植物自身呼吸消耗后的剩余量：NP = GP − R。是消费者可以利用的能量。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">次级生产量</div>
-        <div class="term-def">消费者（异养生物）同化能量后，扣除自身呼吸消耗后的剩余，用于生长、繁殖的能量。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">摄食量（I）</div>
-        <div class="term-def">生物所摄取的能量。对植物为光合作用吸收的日光能；对动物为吃进的食物能量。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">同化量（A）</div>
-        <div class="term-def">被生物消化吸收（或固定）的能量。植物中指光合固定的总量（= GP）；动物中指消化吸收的量。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">林德曼效率（Lindeman's efficiency）</div>
-        <div class="term-def">n+1 营养级获得的能量与 n 营养级获得能量之比，大约为 10%（十分之一定律）。= 同化效率 × 生产效率 × 消费效率。</div>
-      </div>
+  <div class="sec">
+    <h4>能流参数（必考计算）</h4>
+    <table class="ct">
+      <tr><th>参数</th><th>符号</th><th>含义</th></tr>
+      <tr><td><strong>摄食量</strong></td><td>I</td><td>生物所摄取的能量（植物=光合吸收日光能；动物=吃进食物能量）</td></tr>
+      <tr><td><strong>同化量</strong></td><td>A</td><td>被消化吸收（或固定）的能量。植物中A=GP（总初级生产量）</td></tr>
+      <tr><td><strong>呼吸量</strong></td><td>R</td><td>生物在呼吸等代谢和各种活动中消耗的全部能量</td></tr>
+      <tr><td><strong>生产量</strong></td><td>P</td><td>净剩的同化能量，以有机物质形式积累。P = A − R</td></tr>
+      <tr><td><strong>总初级生产量</strong></td><td>GP</td><td>植物通过光合作用固定的总能量</td></tr>
+      <tr><td><strong>净初级生产量</strong></td><td>NP</td><td>GP − R（植物自身呼吸消耗后的剩余，是消费者可利用的能量）</td></tr>
+    </table>
+    <div class="formula">
+      I = A + FU（粪便）　　A = P + R　　P = A − R<br>
+      即：摄食量 = 同化量 + 粪便　　同化量 = 生产量 + 呼吸量
     </div>
   </div>
-
-  <div class="section">
-    <h4>三种生态效率对比</h4>
-    <table class="compare-table">
+  <div class="sec">
+    <h4>四种生态效率（必考）</h4>
+    <table class="ct">
       <tr><th>效率名称</th><th>公式</th><th>含义</th></tr>
-      <tr><td><strong>同化效率（Ae）</strong></td><td>Ae = Aₙ / Iₙ</td><td>某营养级同化量占摄食量的比例</td></tr>
+      <tr><td><strong>同化效率（Ae）</strong></td><td>Ae = Aₙ / Iₙ</td><td>同化量占摄食量的比例</td></tr>
       <tr><td><strong>生产效率（Pe）</strong></td><td>Pe = Pₙ / Aₙ</td><td>净生产量占同化量的比例</td></tr>
       <tr><td><strong>消费效率（Ce）</strong></td><td>Ce = Iₙ₊₁ / Pₙ</td><td>下一营养级消费量占上一营养级净生产量的比例</td></tr>
-      <tr><td><strong>林德曼效率（Le）</strong></td><td>Le = Ae × Pe × Ce = Aₙ₊₁ / Aₙ</td><td>营养级间的同化量之比，约10%</td></tr>
+      <tr><td><strong>林德曼效率（Le）</strong></td><td>Le = Ae × Pe × Ce = Aₙ₊₁ / Aₙ ≈ 10%</td><td>营养级间同化量之比，即"十分之一定律"</td></tr>
     </table>
-    <div class="formula-box">
-能量关系：I = A + FU（粪便排出）　　A = P + R　　P = A − R<br>
-即：摄食量 = 同化量 + 粪便量　　同化量 = 生产量 + 呼吸量
+  </div>
+  <div class="sec">
+    <h4>初级生产量的限制因素</h4>
+    <table class="ct">
+      <tr><th>生态系统</th><th>主要限制因素</th></tr>
+      <tr><td><strong>陆地</strong></td><td>光、CO₂、水和营养物质（基本资源）；温度（影响光合效率）；食草动物</td></tr>
+      <tr><td><strong>淡水</strong></td><td>磷是主要限制因子（N、P、C导致富营养化）</td></tr>
+      <tr><td><strong>海洋</strong></td><td>光（1m处吸收50%，20m处仅5–10%）；营养物质（K、P在深水层）</td></tr>
+    </table>
+  </div>
+  <!-- 能量流动框图 -->
+  <div class="sec">
+    <h4>📊 能量流动框图</h4>
+    <div class="mindmap-wrap">
+<svg viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg" style="font-family:'PingFang SC',Arial,sans-serif">
+<defs><marker id="a10" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#52b788" stroke-width="1.5" stroke-linecap="round"/></marker></defs>
+<!-- 太阳光 -->
+<rect x="10" y="78" width="80" height="44" rx="6" fill="#e9c46a" stroke="#b5830a" stroke-width="0.5"/>
+<text x="50" y="100" text-anchor="middle" fill="#3a2800" font-size="11">太阳光</text>
+<text x="50" y="114" text-anchor="middle" fill="#5a4000" font-size="10">能量输入</text>
+<line x1="90" y1="100" x2="130" y2="100" stroke="#b5830a" stroke-width="1.5" marker-end="url(#a10)" fill="none"/>
+<!-- GP框 -->
+<rect x="130" y="70" width="130" height="60" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="195" y="95" text-anchor="middle" fill="#fff" font-size="11">总初级生产 GP</text>
+<text x="195" y="109" text-anchor="middle" fill="#95d5b2" font-size="10">植物光合固定</text>
+<text x="195" y="123" text-anchor="middle" fill="#d8f3dc" font-size="9">GP = NP + R</text>
+<!-- R分支 -->
+<line x1="195" y1="130" x2="195" y2="160" stroke="#c0392b" stroke-width="1" marker-end="url(#a10)" fill="none"/>
+<rect x="150" y="160" width="90" height="28" rx="5" fill="#fde8e8" stroke="#c0392b" stroke-width="0.5"/>
+<text x="195" y="178" text-anchor="middle" fill="#7b1a1a" font-size="10">呼吸散失 R</text>
+<!-- NP箭头 -->
+<line x1="260" y1="100" x2="300" y2="100" stroke="#52b788" stroke-width="1.5" marker-end="url(#a10)" fill="none"/>
+<text x="280" y="92" text-anchor="middle" fill="#2d6a4f" font-size="9">NP=GP-R</text>
+<!-- 消费者 -->
+<rect x="300" y="70" width="130" height="60" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="365" y="95" text-anchor="middle" fill="#fff" font-size="11">次级生产</text>
+<text x="365" y="109" text-anchor="middle" fill="#95d5b2" font-size="10">消费者同化</text>
+<text x="365" y="123" text-anchor="middle" fill="#d8f3dc" font-size="9">I=A+FU A=P+R</text>
+<!-- 消费者R分支 -->
+<line x1="365" y1="130" x2="365" y2="160" stroke="#c0392b" stroke-width="1" marker-end="url(#a10)" fill="none"/>
+<rect x="320" y="160" width="90" height="28" rx="5" fill="#fde8e8" stroke="#c0392b" stroke-width="0.5"/>
+<text x="365" y="178" text-anchor="middle" fill="#7b1a1a" font-size="10">呼吸+粪便</text>
+<!-- 林德曼 -->
+<line x1="430" y1="100" x2="480" y2="100" stroke="#52b788" stroke-width="1.5" marker-end="url(#a10)" fill="none"/>
+<rect x="450" y="86" width="60" height="28" rx="4" fill="#e9c46a" stroke="#b5830a" stroke-width="0.5"/>
+<text x="480" y="100" text-anchor="middle" fill="#3a2800" font-size="9">≈10%</text>
+<text x="480" y="112" text-anchor="middle" fill="#5a4000" font-size="8">林德曼效率</text>
+<!-- 分解者 -->
+<rect x="580" y="70" width="130" height="60" rx="6" fill="#2d6a4f" stroke="#52b788" stroke-width="0.5"/>
+<text x="645" y="95" text-anchor="middle" fill="#fff" font-size="11">分解</text>
+<text x="645" y="109" text-anchor="middle" fill="#95d5b2" font-size="10">细菌/真菌/腐食动物</text>
+<text x="645" y="123" text-anchor="middle" fill="#d8f3dc" font-size="9">→无机物返回环境</text>
+<!-- 死亡有机物→分解者 -->
+<line x1="365" y1="188" x2="645" y2="188" stroke="#7f8c8d" stroke-width="1" marker-end="url(#a10)" fill="none" stroke-dasharray="4,3"/>
+<text x="505" y="200" text-anchor="middle" fill="#3d5240" font-size="9">死亡有机物（碎屑）</text>
+<!-- 4大效率 -->
+<rect x="750" y="40" width="140" height="120" rx="6" fill="#f0faf3" stroke="#a8d5b5" stroke-width="0.5"/>
+<text x="820" y="60" text-anchor="middle" fill="#1a4731" font-size="10" font-weight="700">4种生态效率</text>
+<text x="820" y="78" text-anchor="middle" fill="#2d6a4f" font-size="9">同化效率=A/I</text>
+<text x="820" y="94" text-anchor="middle" fill="#2d6a4f" font-size="9">生产效率=P/A</text>
+<text x="820" y="110" text-anchor="middle" fill="#2d6a4f" font-size="9">消费效率=In+1/Pn</text>
+<text x="820" y="126" text-anchor="middle" fill="#c45c26" font-size="9" font-weight="700">林德曼效率≈10%</text>
+<text x="820" y="142" text-anchor="middle" fill="#3d5240" font-size="9">= Ae × Pe × Ce</text>
+</svg>
     </div>
   </div>
-
-  <div class="section">
-    <h4>初级生产量的限制因素</h4>
-    <table class="compare-table">
-      <tr><th>生态系统</th><th>主要限制因素</th></tr>
-      <tr><td><strong>陆地生态系统</strong></td><td>光、CO₂、水和营养物质（基本资源）；温度（影响光合效率）；食草动物捕食（减少光合生物量）</td></tr>
-      <tr><td><strong>淡水生态系统</strong></td><td>磷是植物生产量的主要限制因子（N、P、C导致富营养化）</td></tr>
-      <tr><td><strong>海洋生态系统</strong></td><td>光（1m处吸收50%，20m处仅5–10%）；营养物质（K、P为主，但集中在深水层）</td></tr>
-    </table>
-  </div>
-  <div class="back-top"><a href="#top">↑ 回到顶部</a></div>
+  <div class="bt"><a href="#top">↑ 顶部</a></div>
 </div>
 
 <!-- CH13 -->
 <div class="chapter" id="ch13">
   <h3>第十三章：生态系统的物质循环</h3>
-
-  <div class="section">
-    <h4>核心名词</h4>
-    <div class="term-grid">
-      <div class="term-card">
-        <div class="term-name">生物地球化学循环（Biogeochemical cycle）</div>
-        <div class="term-def">化学元素在生物圈中的循环运动，包括生物有机体与无机环境之间的物质交换。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">气体型循环</div>
-        <div class="term-def">贮存库是大气和海洋，有气体形式的分子参与循环，循环速度较快。如碳循环（CO₂）、氮循环（N₂）。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">沉积型循环</div>
-        <div class="term-def">贮存库是岩石、土壤和沉积物，无气体形式，循环速度极慢，以百万年计。如磷循环、钙循环。</div>
-      </div>
-    </div>
+  <div class="sec">
+    <h4>生物地球化学循环3大类型</h4>
+    <table class="ct">
+      <tr><th>类型</th><th>贮存库</th><th>有无气体分子</th><th>循环速度</th><th>代表元素</th></tr>
+      <tr><td><strong>水循环</strong></td><td>陆地水体、大气、海洋</td><td>有（水蒸气）</td><td>快慢均有</td><td>H₂O</td></tr>
+      <tr><td><strong>气体型循环</strong></td><td>大气和海洋</td><td>有</td><td>快</td><td>C（CO₂）、N（N₂）、O（O₂）、硫（部分）</td></tr>
+      <tr><td><strong>沉积型循环</strong></td><td>岩石、土壤、沉积物</td><td>无</td><td>极慢（百万年计）</td><td><strong>P</strong>、Ca、Na、Mg、Fe；硫（部分）</td></tr>
+    </table>
+    <div class="kbox"><div class="kt">⭐ 注意：磷仅有沉积型循环，硫兼具两种类型</div></div>
   </div>
-
-  <div class="section">
-    <h4>五大元素循环对比</h4>
-    <table class="compare-table">
-      <tr><th>元素</th><th>类型</th><th>最大贮存库</th><th>关键过程</th><th>重要性</th></tr>
-      <tr><td><strong>水</strong></td><td>水循环</td><td>海洋（约97%）</td><td>蒸发、降水、径流（大循环）；蒸发、降水（小循环）</td><td>推动所有物质循环的基础</td></tr>
-      <tr><td><strong>碳（C）</strong></td><td>气体型</td><td>岩石圈（90%以碳酸盐形式）</td><td>光合作用（固定）、呼吸（释放）、大气-海洋CO₂交换、人类燃烧化石燃料</td><td>生物有机体最重要元素；温室效应</td></tr>
-      <tr><td><strong>氮（N）</strong></td><td>气体型</td><td>大气（最大氮库，约78%）</td><td>固氮（生物+人工）→氨化→硝化→反硝化</td><td>蛋白质基本成分；生物不能直接利用N₂</td></tr>
-      <tr><td><strong>磷（P）</strong></td><td>沉积型</td><td>陆地土壤（钙盐）</td><td>岩石风化→植物吸收→消费者→分解→沉积（难以回到陆地）</td><td>核酸、细胞膜、能量传递、骨骼重要成分</td></tr>
-      <tr><td><strong>硫（S）</strong></td><td>气体型+沉积型</td><td>岩石（沉积相硫）</td><td>风化分解→盐溶液；气态（SO₂）→大气→沉降回陆地和海洋</td><td>蛋白质和氨基酸的基本成分</td></tr>
+  <div class="sec">
+    <h4>五大元素循环关键点</h4>
+    <table class="ct">
+      <tr><th>元素</th><th>最大贮存库</th><th>关键过程</th><th>重要性</th></tr>
+      <tr><td><strong>水</strong></td><td>海洋（约97%）</td><td>大循环（海陆之间）；小循环（陆地或海洋内部）</td><td>推动所有物质循环的基础</td></tr>
+      <tr><td><strong>碳（C）</strong></td><td>岩石圈（90%以碳酸盐）</td><td>光合（固定）→呼吸（释放）→大气-海洋CO₂交换→人类化石燃料燃烧</td><td>生物有机体最重要元素；温室效应核心</td></tr>
+      <tr><td><strong>氮（N）</strong></td><td>大气（N₂，约78%）</td><td>固氮（生物+人工）→氨化→硝化→反硝化</td><td>蛋白质基本成分；生物不能直接利用N₂</td></tr>
+      <tr><td><strong>磷（P）</strong></td><td>陆地土壤（钙盐）</td><td>岩石风化→植物吸收→消费者→分解→沉积（难返陆地）</td><td>核酸、细胞膜、ATP、骨骼成分</td></tr>
+      <tr><td><strong>硫（S）</strong></td><td>岩石（沉积相硫）</td><td>风化→盐溶液（陆地水体）；气态（SO₂）→大气→沉降</td><td>蛋白质和氨基酸基本成分</td></tr>
     </table>
   </div>
-
-  <div class="section">
-    <h4>氮循环的四个关键过程</h4>
-    <ul class="content-list">
-      <li><strong>固氮作用：</strong>将大气中的N₂转化为氨（NH₃）或其他含氮化合物。生物固氮（根瘤菌、蓝藻）+ 人工固氮（哈伯法）</li>
+  <div class="sec">
+    <h4>氮循环4个关键过程（必背）</h4>
+    <ol class="cl">
+      <li><strong>固氮作用：</strong>将大气中N₂转化为NH₃或其他含氮化合物（生物固氮：根瘤菌、蓝藻；人工固氮：哈伯法）</li>
       <li><strong>氨化作用：</strong>微生物将有机氮分解为无机氮（NH₄⁺）</li>
       <li><strong>硝化作用：</strong>细菌将NH₄⁺氧化为NO₃⁻（亚硝化菌→硝化菌）</li>
       <li><strong>反硝化作用：</strong>细菌将NO₃⁻还原为N₂回到大气，完成循环</li>
-    </ul>
+    </ol>
   </div>
-  <div class="back-top"><a href="#top">↑ 回到顶部</a></div>
+  <div class="bt"><a href="#top">↑ 顶部</a></div>
 </div>
 
 <!-- CH14 -->
 <div class="chapter" id="ch14">
   <h3>第十四章：地球上生态系统的主要类型及其分布</h3>
-
-  <div class="section">
+  <div class="sec">
     <h4>核心名词</h4>
-    <div class="term-grid">
-      <div class="term-card">
-        <div class="term-name">地带性植被（显域植被）</div>
-        <div class="term-def">分布在显域地境（壤质/黏质土、非盐渍化、排水良好的平地或坡地）上，充分反映一个地区气候特点的植被。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">非地带性植被（隐域植被）</div>
-        <div class="term-def">不固定在某一植被带，出现在两个及以上植被带，受某一特殊生态因素（如土壤、地形）控制，呈斑点或条带状嵌入地带性植被中的植被。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">纬度地带性</div>
-        <div class="term-def">随纬度方向改变，气候（水热条件）发生递变，植被沿纬度方向更替。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">经度地带性</div>
-        <div class="term-def">随经度方向改变，以水分为主导因素，植被沿经度方向更替（沿海→草原→荒漠）。</div>
-      </div>
-      <div class="term-card">
-        <div class="term-name">垂直地带性</div>
-        <div class="term-def">随海拔升高，气温、降雨、风速等变化，植被随海拔升高表现出条带状更替，植被带与等高线平行。</div>
-      </div>
+    <div class="tgrid">
+      <div class="tcard hot"><div class="tn">地带性植被（显域植被）</div><div class="td">分布在显域地境（壤质/黏质土、非盐渍化、排水良好的平地或坡地）上，充分反映当地气候特点的植被。</div></div>
+      <div class="tcard"><div class="tn">非地带性植被（隐域植被）</div><div class="td">不固定在某一植被带，受特殊生态因素（土壤、地形）控制，呈斑点或条带状嵌入地带性植被中的植被。</div></div>
+      <div class="tcard hot"><div class="tn">纬度地带性</div><div class="td">随纬度增高，气候（水热条件）发生递变，植被沿纬度方向更替。</div></div>
+      <div class="tcard hot"><div class="tn">经度地带性</div><div class="td">随经度改变，以水分为主导因素，植被沿经度方向更替（沿海→草原→荒漠）。</div></div>
+      <div class="tcard hot"><div class="tn">垂直地带性</div><div class="td">随海拔升高，气温、降雨等变化，植被随海拔升高表现出条带状更替，植被带与等高线平行。</div></div>
     </div>
   </div>
-
-  <div class="section">
+  <div class="sec">
     <h4>主要陆地生态系统（从低纬→高纬）</h4>
-    <table class="compare-table">
-      <tr><th>生态系统类型</th><th>主要分布</th><th>气候特征</th><th>代表性特征</th></tr>
-      <tr><td><strong>热带雨林</strong></td><td>赤道两侧（南美洲、非洲、东南亚）</td><td>全年高温多雨，无明显季节变化</td><td>物种多样性最高；多层垂直结构；附生植物、木质藤本发达</td></tr>
-      <tr><td><strong>亚热带常绿阔叶林</strong></td><td>亚热带（中国南方）</td><td>夏热冬温，雨量充沛</td><td>以壳斗科、樟科等常绿阔叶树为主</td></tr>
-      <tr><td><strong>夏绿阔叶林（温带落叶林）</strong></td><td>温带（欧洲、北美东部、中国东北）</td><td>四季分明，冬季落叶</td><td>冬季落叶；季相变化明显</td></tr>
-      <tr><td><strong>北方针叶林（泰加林）</strong></td><td>北纬45°–70°（北美、欧亚大陆）</td><td>冬季漫长严寒，夏季短暂凉爽</td><td>以松、杉、云杉、冷杉等针叶树为主；物种多样性低</td></tr>
-      <tr><td><strong>温带草原</strong></td><td>大陆内部（内蒙古、北美大平原）</td><td>半干旱，降雨不足以支持森林</td><td>以禾本科草类为主；无树木或稀少</td></tr>
-      <tr><td><strong>荒漠</strong></td><td>副热带及温带内陆干旱区</td><td>极端干旱（降水&lt;250mm）</td><td>植被极稀疏；动植物具极强耐旱适应</td></tr>
-      <tr><td><strong>冻原（苔原）</strong></td><td>北极圈周边及高山</td><td>极端寒冷，无林木生长</td><td>苔藓、地衣为主；土壤有永久冻土层</td></tr>
+    <table class="ct">
+      <tr><th>类型</th><th>主要分布</th><th>气候特征</th><th>代表性特征</th></tr>
+      <tr><td><strong>热带雨林</strong></td><td>赤道两侧（南美、非洲、东南亚）</td><td>全年高温多雨，无明显季节</td><td>物种多样性最高；多层垂直结构；附生植物发达</td></tr>
+      <tr><td><strong>亚热带常绿阔叶林</strong></td><td>亚热带（中国南方）</td><td>夏热冬温，雨量充沛</td><td>壳斗科、樟科等常绿阔叶树为主</td></tr>
+      <tr><td><strong>夏绿阔叶林（温带落叶林）</strong></td><td>温带（欧洲、北美东部、中国东北）</td><td>四季分明，冬季落叶</td><td>季相变化明显</td></tr>
+      <tr><td><strong>北方针叶林（泰加林）</strong></td><td>北纬45°–70°（北美、欧亚）</td><td>冬季漫长严寒，夏季短暂凉爽</td><td>松、杉、云杉、冷杉为主；物种多样性低</td></tr>
+      <tr><td><strong>温带草原</strong></td><td>大陆内部（内蒙古、北美大平原）</td><td>半干旱，降雨不足以支持森林</td><td>禾本科草类为主；无树木或稀少</td></tr>
+      <tr><td><strong>荒漠</strong></td><td>副热带及温带内陆干旱区</td><td>极端干旱（&lt;250mm）</td><td>植被极稀疏；极强耐旱适应</td></tr>
+      <tr><td><strong>冻原（苔原）</strong></td><td>北极圈周边及高山</td><td>极端寒冷，无林木</td><td>苔藓、地衣为主；永久冻土层</td></tr>
     </table>
   </div>
-
-  <div class="section">
-    <h4>中国植被地带性规律（重点论述题）</h4>
-    <div class="key-box">
-      <div class="key-title">⭐ 中国植被纬度地带性（东部湿润区，从北→南）</div>
-      <ul class="content-list">
-        <li>针叶落叶林（寒温带）→ 温带针叶落叶阔叶林 → 暖温带落叶阔叶林</li>
-        <li>→ 北亚热带含常绿成分的落叶阔叶林 → 中亚热带常绿阔叶林</li>
-        <li>→ 南亚带常绿阔叶林 → 热带季雨林、雨林</li>
-      </ul>
-    </div>
-    <div class="key-box">
-      <div class="key-title">⭐ 中国植被经度地带性（温带，从东→西）</div>
-      <ul class="content-list">
-        <li>沿海区：降水量大 → <strong>夏绿阔叶林</strong></li>
-        <li>离海较远：降水减少，旱季加长 → <strong>草原植被</strong></li>
-        <li>内陆：降水更少，极端干旱 → <strong>荒漠植被</strong></li>
-      </ul>
-    </div>
+  <div class="sec">
+    <h4>中国植被地带性规律（论述题重点）</h4>
+    <div class="kbox"><div class="kt">⭐ 纬度地带性（东部湿润区，从北→南）</div><ul class="cl">
+      <li>针叶落叶林（寒温带）→ 温带针叶落叶阔叶林 → 暖温带落叶阔叶林</li>
+      <li>→ 北亚热带含常绿成分的落叶阔叶林 → 中亚热带常绿阔叶林</li>
+      <li>→ 南亚带常绿阔叶林 → 热带季雨林、雨林</li>
+    </ul></div>
+    <div class="kbox"><div class="kt">⭐ 经度地带性（温带，从东→西）</div><ul class="cl">
+      <li>沿海区：降水量大 → <strong>夏绿阔叶林</strong></li>
+      <li>离海较远：降水减少，旱季加长 → <strong>草原植被</strong></li>
+      <li>内陆：降水更少，极端干旱 → <strong>荒漠植被</strong></li>
+    </ul></div>
   </div>
-  <div class="back-top"><a href="#top">↑ 回到顶部</a></div>
+  <div class="bt"><a href="#top">↑ 顶部</a></div>
 </div>
 
-<!-- ═══════ EXAM GUIDE ═══════ -->
-<div class="part-header" id="exam">
-  <span class="part-badge">备考指南</span>
-  <h2>题型专项整理</h2>
+<!-- ═══════════════ 备考专区 ═══════════════ -->
+<div class="part-hdr" id="exam">
+  <span class="part-badge">备考专区</span>
+  <h2>名词 · 题库 · 画图框图清单</h2>
 </div>
 
-<div class="chapter">
-  <h3>高频名词解释（按出现概率排序）</h3>
-  <div class="key-box">
-    <div class="key-title">⭐ 必背名词（选择最容易考到的20个）</div>
-    <ol class="content-list">
-      <li><strong>生态幅 / 耐受性定律</strong>——环境章的核心概念</li>
-      <li><strong>内稳态</strong>——生物调节的核心机制</li>
-      <li><strong>有效积温法则</strong>——温度章必考，记住公式 K = N(T−C)</li>
-      <li><strong>光周期现象</strong>——长/短日照植物</li>
-      <li><strong>种群 / 群落 / 生态系统</strong>——三者定义和区别</li>
-      <li><strong>生命表（动态/静态/综合）</strong>——种群统计核心工具</li>
-      <li><strong>逻辑斯谛增长 / r 和 K</strong>——记住方程和意义</li>
-      <li><strong>r-选择 / K-选择</strong>——生活史对策核心</li>
-      <li><strong>生态位（基础/实际）</strong>——竞争章核心</li>
-      <li><strong>竞争排斥原理</strong>——高斯法则</li>
-      <li><strong>优势种 / 建群种</strong>——群落组成必考</li>
-      <li><strong>重要值</strong>——记公式</li>
-      <li><strong>辛普森指数 / 香农-威纳指数</strong>——多样性指数</li>
-      <li><strong>群落交错区 / 边缘效应</strong>——群落结构</li>
-      <li><strong>演替（原生/次生）/ 顶级群落</strong>——群落动态</li>
-      <li><strong>食物链 / 食物网 / 营养级</strong>——生态系统结构</li>
-      <li><strong>林德曼效率（十分之一定律）</strong>——能量流动</li>
-      <li><strong>净初级生产量 / 总初级生产量</strong>——能量流动</li>
-      <li><strong>气体型循环 / 沉积型循环</strong>——物质循环</li>
-      <li><strong>地带性植被 / 纬度/经度/垂直地带性</strong>——分布规律</li>
-    </ol>
+<!-- 必背名词 -->
+<div class="exam-section">
+  <h3>⭐ 必背20个名词解释</h3>
+  <div class="nlist">
+    <div class="nitem hot"><span class="num">1</span>生态幅 / 耐受性定律</div>
+    <div class="nitem hot"><span class="num">2</span>内稳态（Homeostasis）</div>
+    <div class="nitem hot"><span class="num">3</span>有效积温法则（K=N(T-C)）</div>
+    <div class="nitem hot"><span class="num">4</span>光周期现象</div>
+    <div class="nitem hot"><span class="num">5</span>贝格曼规律 / 阿伦规律</div>
+    <div class="nitem hot"><span class="num">6</span>内禀增长率 r / 环境容纳量 K</div>
+    <div class="nitem hot"><span class="num">7</span>逻辑斯谛增长（S型，公式必记）</div>
+    <div class="nitem hot"><span class="num">8</span>r-选择 / K-选择（各自特点）</div>
+    <div class="nitem hot"><span class="num">9</span>生态位（基础/实际）</div>
+    <div class="nitem hot"><span class="num">10</span>竞争排斥原理（高斯法则）</div>
+    <div class="nitem"><span class="num">11</span>优势种 / 建群种</div>
+    <div class="nitem"><span class="num">12</span>重要值（森林/草原公式）</div>
+    <div class="nitem"><span class="num">13</span>辛普森指数 / 香农-威纳指数</div>
+    <div class="nitem"><span class="num">14</span>群落交错区 / 边缘效应</div>
+    <div class="nitem hot"><span class="num">15</span>群落演替（原生/次生/顶级）</div>
+    <div class="nitem"><span class="num">16</span>食物链 / 营养级 / 生态金字塔</div>
+    <div class="nitem hot"><span class="num">17</span>林德曼效率（十分之一定律）</div>
+    <div class="nitem"><span class="num">18</span>净初级生产量 NP / 总初级生产量 GP</div>
+    <div class="nitem"><span class="num">19</span>气体型循环 / 沉积型循环</div>
+    <div class="nitem"><span class="num">20</span>地带性植被 / 纬度/经度/垂直地带性</div>
   </div>
 </div>
 
-<div class="chapter">
-  <h3>常见简答题预测</h3>
-  <ul class="content-list">
-    <li><strong>简述生态因子对生物作用的一般规律（5条）。</strong></li>
-    <li><strong>简述内温动物对低温的适应方式（形态、生理、行为）。</strong></li>
-    <li><strong>简述鱼类渗透压调节的类型和特征。</strong></li>
-    <li><strong>简述 r-选择和 K-选择的区别及各自适应的环境。</strong></li>
-    <li><strong>简述竞争排斥原理及生态位分化的意义。</strong></li>
-    <li><strong>简述群落的基本特征（9条）。</strong></li>
-    <li><strong>简述影响群落结构的生物和非生物因素。</strong></li>
-    <li><strong>简述水生演替系列的各个阶段。</strong></li>
-    <li><strong>简述三种演替理论模型（促进/抑制/忍耐）的核心观点。</strong></li>
-    <li><strong>简述生态系统的四个基本组成成分及各自功能。</strong></li>
-    <li><strong>简述三种生态金字塔的特点及能量金字塔为何总是正金字塔。</strong></li>
-    <li><strong>简述氮循环的四个关键过程。</strong></li>
-    <li><strong>简述陆地生态系统植被的纬度地带性、经度地带性和垂直地带性规律。</strong></li>
+<!-- 简答题 -->
+<div class="exam-section">
+  <h3>💬 高频简答题预测（每题5分）</h3>
+  <ul class="qlist">
+    <li>简述生态因子对生物作用的5大一般规律。</li>
+    <li>简述生物对生态因子耐受限度的5种调整方式。</li>
+    <li>简述有效积温法则的内容及其在农业上的5大应用。</li>
+    <li>简述内温动物对低温的适应方式（形态、生理、行为各举例）。</li>
+    <li class="hard">简述鱼类渗透压调节的4种类型及其机制。</li>
+    <li>简述生命表的3种类型及各自特点。</li>
+    <li>简述r-选择与K-选择者的区别，各举一典型例子。</li>
+    <li class="hard">简述竞争排斥原理及生态位分化的意义。</li>
+    <li>简述群落的基本特征（至少5条）。</li>
+    <li>简述中度干扰假说的内容及证据。</li>
+    <li class="hard">简述水生演替系列的各个阶段。</li>
+    <li>简述三种演替理论模型（促进/抑制/忍耐）的核心观点。</li>
+    <li>简述生态系统的四个基本组成成分及各自功能。</li>
+    <li>简述为什么能量金字塔总是正三角形而数量金字塔可以倒置。</li>
+    <li class="hard">简述氮循环的4个关键过程。</li>
   </ul>
 </div>
 
-<div class="chapter">
-  <h3>常见论述题预测</h3>
-  <ul class="content-list">
-    <li><strong>论述中度干扰假说的内容、证据和意义。</strong></li>
-    <li><strong>论述物种多样性随纬度变化的规律及其各种解释学说。</strong></li>
-    <li><strong>论述 Lotka-Volterra 种间竞争模型的四种结局及其生态学意义。</strong></li>
-    <li><strong>论述逻辑斯谛增长模型（S型增长）的假设、方程和实际意义（包括 K/2 的意义）。</strong></li>
-    <li><strong>论述生态系统的能量流动规律，包括生态效率的概念和林德曼效率。</strong></li>
-    <li><strong>比较单元顶极学说、多元顶极学说和顶极-格局假说的异同。</strong></li>
-    <li><strong>论述全球碳循环的过程及人类活动对其的影响（温室效应）。</strong></li>
-    <li><strong>论述岛屿生物地理学理论（MacArthur平衡说）及其对生物多样性保护的意义。</strong></li>
+<!-- 论述题 -->
+<div class="exam-section">
+  <h3>📝 高频论述题预测（每题10分）</h3>
+  <ul class="qlist">
+    <li class="hard">论述中度干扰假说的内容、潮间带实验证据和生态管理意义。</li>
+    <li class="hard">论述物种多样性随纬度变化的规律及7种解释学说（6个因素）。</li>
+    <li class="hard">论述Lotka-Volterra种间竞争模型的4种结局及各自生态学意义。</li>
+    <li>论述逻辑斯谛增长模型（S型）的假设、方程、N=K/2的意义及MSY应用。</li>
+    <li>论述演替顶极3大学说（单元/多元/顶极格局假说）的核心内容及对比。</li>
+    <li class="hard">论述生态系统能量流动规律，包括各生态效率概念和林德曼效率。</li>
+    <li>论述全球碳循环的主要过程及人类活动对碳循环的影响（温室效应）。</li>
+    <li>论述中国植被的纬度和经度地带性规律，举例说明。</li>
   </ul>
+</div>
+
+<!-- 画图解释题清单 -->
+<div class="exam-section">
+  <h3>🖊 画图解释题专项——框图练习清单</h3>
+  <p style="font-size:.9em;color:var(--text2);margin-bottom:14px">老师原创题型，占20分。下列框图均在本资料对应章节中已给出，建议反复练习默画。</p>
+  <div class="nlist">
+    <div class="nitem hot"><span class="num">①</span>生态学两大核心关系 × 四大尺度总框图</div>
+    <div class="nitem hot"><span class="num">②</span>生物与生态因子相互作用（3定律→5种适应→三维适应）</div>
+    <div class="nitem"><span class="num">③</span>温度与生物关系（积温法则→动物类型→低温/高温适应）</div>
+    <div class="nitem"><span class="num">④</span>鱼类渗透压调节（4类鱼的高低渗→肾脏/鳃机制）</div>
+    <div class="nitem hot"><span class="num">⑤</span>种群生态学总框图（数量→增长模型→调节→进化→生活史→种间）</div>
+    <div class="nitem hot"><span class="num">⑥</span>种群增长模型（J型 vs S型，含N=K/2, MSY）</div>
+    <div class="nitem"><span class="num">⑦</span>r-选择 vs K-选择的对比框图</div>
+    <div class="nitem hot"><span class="num">⑧</span>种间关系与生态位分化（竞争→LV模型→竞争排斥→生态位）</div>
+    <div class="nitem hot"><span class="num">⑨</span>群落组成与结构（种类组成→数量特征→垂直/水平/时间结构→边缘效应）</div>
+    <div class="nitem hot"><span class="num">⑩</span>群落演替（类型→系列→3过程模型→3顶极学说→方向）</div>
+    <div class="nitem"><span class="num">⑪</span>影响群落结构的因素（竞争/捕食/干扰/空间异质性/岛屿/中度干扰假说）</div>
+    <div class="nitem hot"><span class="num">⑫</span>生态系统能量流动（GP→NP→次级生产→分解→4大生态效率→林德曼10%）</div>
+    <div class="nitem"><span class="num">⑬</span>物质循环3大类型（气体型 vs 沉积型）× 5大元素循环</div>
+    <div class="nitem"><span class="num">⑭</span>全球植被分布地带性（纬度/经度/垂直/高原地带性）</div>
+  </div>
 </div>
 
 </main>
 
 <footer>
-  <p>基础生态学 · 期末复习资料 · 归纳自 20 份课堂讲义</p>
-  <p style="margin-top:6px;">建议结合教材和课堂练习题进行复习 · 祝考试顺利！🌿</p>
+  <p>基础生态学 · 期末复习资料（完整版）· 根据老师课堂重点整理 · 含14章知识框图</p>
+  <p style="margin-top:6px">老师说：搭建整体知识框架 → 主动回想 → 自己画框图 → 互相讲解 🌿</p>
 </footer>
 
 </body>
